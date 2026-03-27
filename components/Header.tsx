@@ -58,7 +58,7 @@ export default function Header() {
       <style>{`
         .site-title-link {
           font-family: "Noto Serif JP", "游明朝", Georgia, serif;
-          font-size: 17px;
+          font-size: 14px;
           font-weight: 700;
           color: #1A2332;
           text-decoration: none;
@@ -70,7 +70,7 @@ export default function Header() {
           color: #1A2332;
         }
         .nav-link {
-          font-size: 13px;
+          font-size: 12px;
         }
         .title-short {
           display: none;
