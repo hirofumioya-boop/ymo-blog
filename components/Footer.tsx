@@ -38,15 +38,6 @@ export default function Footer() {
             >
               非エンジニア社長がAI社員だけの会社を作ってみた
             </p>
-            <p
-              style={{
-                fontFamily: '"Noto Sans JP", "ヒラギノ角ゴ Pro", sans-serif',
-                fontSize: "14px",
-                color: "#9CA3AF",
-              }}
-            >
-              非エンジニア社長がAI社員だけの会社を作ってみた。
-            </p>
           </div>
 
         </div>
