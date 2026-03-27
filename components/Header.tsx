@@ -58,35 +58,41 @@ export default function Header() {
       <style>{`
         .site-title-link {
           font-family: "Noto Serif JP", "游明朝", Georgia, serif;
-          font-size: 20px;
+          font-size: 17px;
           font-weight: 700;
           color: #1A2332;
           text-decoration: none;
-          letter-spacing: 0.05em;
+          letter-spacing: 0.03em;
           flex-shrink: 1;
           min-width: 0;
         }
         .site-title-link:hover {
           color: #1A2332;
         }
+        .nav-link {
+          font-size: 13px;
+        }
         .title-short {
           display: none;
         }
-        @media (max-width: 640px) {
+        @media (max-width: 720px) {
           .title-full {
             display: none;
           }
           .title-short {
             display: inline;
-            font-size: 16px;
+            font-size: 15px;
           }
           .nav-link {
-            font-size: 13px !important;
+            font-size: 12px !important;
           }
         }
         @media (max-width: 400px) {
-          .site-title-link {
-            font-size: 14px;
+          .title-short {
+            font-size: 13px;
+          }
+          nav {
+            gap: 16px !important;
           }
         }
       `}</style>
