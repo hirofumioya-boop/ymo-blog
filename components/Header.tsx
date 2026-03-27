@@ -29,10 +29,11 @@ export default function Header() {
         }}
       >
         <Link href="/" className="site-title-link">
-          非エンジニア社長がAI社員だけの会社を作ってみた
+          <span className="title-full">非エンジニア社長がAI社員だけの会社を作ってみた</span>
+          <span className="title-short">AI社員だけの会社</span>
         </Link>
 
-        <nav style={{ display: "flex", gap: "32px", alignItems: "center" }}>
+        <nav style={{ display: "flex", gap: "24px", alignItems: "center" }}>
           <Link
             href="/about"
             className={`nav-link ${pathname === "/about" ? "active" : ""}`}
@@ -62,9 +63,31 @@ export default function Header() {
           color: #1A2332;
           text-decoration: none;
           letter-spacing: 0.05em;
+          flex-shrink: 1;
+          min-width: 0;
         }
         .site-title-link:hover {
           color: #1A2332;
+        }
+        .title-short {
+          display: none;
+        }
+        @media (max-width: 640px) {
+          .title-full {
+            display: none;
+          }
+          .title-short {
+            display: inline;
+            font-size: 16px;
+          }
+          .nav-link {
+            font-size: 13px !important;
+          }
+        }
+        @media (max-width: 400px) {
+          .site-title-link {
+            font-size: 14px;
+          }
         }
       `}</style>
     </header>
