@@ -63,7 +63,7 @@ export default function AboutPage() {
           <p>
             外資IT企業に20年以上勤務したのち、56歳でサラリーマンをアーリーリタイアしました。
             うち7年間はAmazonで、クラウドビジネスに携わる傍ら、採用・育成・評価・組織運営の実務を担い、面接官として関わった候補者は延べ約700名にのぼります。
-            AmazonのリーダーシップPrinciples（OLP：Our Leadership Principles）を日常言語として使い続けた経験が、組織コンサルティングの核になっています。
+            AmazonのOLP（Our Leadership Principles：リーダーとしての行動指針）を日常言語として使い続けた経験が、組織コンサルティングの核になっています。
           </p>
 
           <p>
