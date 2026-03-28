@@ -40,6 +40,16 @@ export default function Home() {
         >
           AIと組織運営について書いています。
         </p>
+        <p
+          style={{
+            fontFamily: '"Noto Sans JP", "ヒラギノ角ゴ Pro", sans-serif',
+            fontSize: "13px",
+            color: "#9CA3AF",
+            marginTop: "12px",
+          }}
+        >
+          このサイトのデザイン・開発は、100% AIチームが担当しました。
+        </p>
       </section>
 
       {/* 読者への呼びかけ */}
