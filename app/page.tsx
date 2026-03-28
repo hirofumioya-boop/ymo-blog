@@ -49,7 +49,7 @@ export default function Home() {
             fontWeight: 500,
           }}
         >
-          このサイトのデザイン・開発は、100% AIチームが担当しました。
+          このサイトのデザイン・開発は、100% 私のAIチームが担当しました。
         </p>
       </section>
 
