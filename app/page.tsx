@@ -50,6 +50,7 @@ export default function Home() {
           }}
         >
           このサイトのデザイン・開発は、100% 私のAIチームが担当しました。
+          詳細は、<Link href="/articles/article-14" style={{ color: "#C4603A" }}>記事No.14</Link>と<Link href="/articles/article-16" style={{ color: "#C4603A" }}>No.16</Link>をご覧ください。
         </p>
       </section>
 
