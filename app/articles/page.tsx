@@ -39,7 +39,7 @@ export default function ArticlesPage() {
               lineHeight: 1.8,
             }}
           >
-            非エンジニアがAIだけの社員チームを作ってIT会社を経営している実録シリーズ。
+            非エンジニアがAIだけの社員チームを作ってIT会社の運営をスタートした実録シリーズ。
           </p>
         </div>
 

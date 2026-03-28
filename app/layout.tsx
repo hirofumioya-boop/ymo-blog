@@ -5,7 +5,7 @@ import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
   title: "非エンジニア社長がAI社員だけの会社を作ってみた",
-  description: "非エンジニアがAIだけの社員チームを作ってIT会社を経営している実録ブログ。AIと経営と、人について書いています。",
+  description: "非エンジニアがAIだけの社員チームを作ってIT会社の運営をスタートした実録ブログ。AIと経営と、人について書いています。",
   robots: {
     index: false,
     follow: false,
