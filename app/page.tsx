@@ -28,7 +28,7 @@ export default function Home() {
             letterSpacing: "0.05em",
           }}
         >
-          非エンジニア社長がAI社員だけの会社作ってみた
+          非エンジニア社長がAI社員だけの会社を作ってみた
         </h1>
         <p
           style={{
