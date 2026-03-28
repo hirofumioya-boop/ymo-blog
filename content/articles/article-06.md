@@ -144,6 +144,6 @@ AIチームでも同じだった。役割を与えるだけでは足りなくて
 
 ## 「うちでも試してみたい」と思った方へ
 
-組織・採用の仕組みづくりから、AIチーム導入の伴走まで。人とAIが共存する組織づくりについて、まずは30分の無料オンライン相談からどうぞ。
+ご意見・ご相談などありましたらお気軽にどうぞ。
 
 [→ お問い合わせはこちら](https://docs.google.com/forms/d/e/1FAIpQLSfaht-CZQzRsCoHc1GEXk4DMipHM0DPQbX2hoxDlKbGsMXlCg/viewform)
