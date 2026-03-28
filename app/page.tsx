@@ -43,9 +43,10 @@ export default function Home() {
         <p
           style={{
             fontFamily: '"Noto Sans JP", "ヒラギノ角ゴ Pro", sans-serif',
-            fontSize: "13px",
-            color: "#9CA3AF",
-            marginTop: "12px",
+            fontSize: "15px",
+            color: "#C4603A",
+            marginTop: "16px",
+            fontWeight: 500,
           }}
         >
           このサイトのデザイン・開発は、100% AIチームが担当しました。
