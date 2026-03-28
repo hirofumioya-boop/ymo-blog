@@ -101,7 +101,7 @@ export default function AboutPage() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              → お問い合わせはこちら（30分・無料）
+              → お問い合わせはこちら
             </a>
           </p>
         </div>
