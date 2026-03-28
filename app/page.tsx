@@ -42,6 +42,65 @@ export default function Home() {
         </p>
       </section>
 
+      {/* 読者への呼びかけ */}
+      <section
+        style={{
+          maxWidth: "720px",
+          margin: "0 auto",
+          padding: "0 24px 72px",
+          textAlign: "center",
+        }}
+      >
+        <p
+          style={{
+            fontFamily: '"Noto Sans JP", "ヒラギノ角ゴ Pro", sans-serif',
+            fontSize: "15px",
+            color: "#4B5563",
+            lineHeight: 2.2,
+            marginBottom: "16px",
+          }}
+        >
+          AIという言葉を聞くたびに、なんとなく焦っている。<br />
+          でも、何から始めればいいかわからない。
+        </p>
+        <p
+          style={{
+            fontFamily: '"Noto Sans JP", "ヒラギノ角ゴ Pro", sans-serif',
+            fontSize: "15px",
+            color: "#4B5563",
+            lineHeight: 2.2,
+            marginBottom: "16px",
+          }}
+        >
+          ChatGPTは一度使ってみた。でも業務には活かせていない。<br />
+          「AIで業務効率化」という記事を読んでも、書いているのはエンジニアか若い人ばかりで、<br />
+          自分には遠い話に感じる。
+        </p>
+        <p
+          style={{
+            fontFamily: '"Noto Sans JP", "ヒラギノ角ゴ Pro", sans-serif',
+            fontSize: "15px",
+            color: "#4B5563",
+            lineHeight: 2.2,
+            marginBottom: "24px",
+          }}
+        >
+          コードは書けない。ITの専門知識もない。<br />
+          でも会社を動かしている。人を動かしている。意思決定をしている。<br />
+          「AIってうちの会社には関係ないのかな」と思いかけていた、そんなあなたへ。
+        </p>
+        <p
+          style={{
+            fontFamily: '"Noto Serif JP", "游明朝", Georgia, serif',
+            fontSize: "18px",
+            fontWeight: 700,
+            color: "#1B3A6B",
+          }}
+        >
+          3日前の私も、同じことを思っていました。
+        </p>
+      </section>
+
       {/* 最新記事 フィーチャード */}
       <section
         style={{
