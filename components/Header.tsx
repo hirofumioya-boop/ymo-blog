@@ -52,6 +52,12 @@ export default function Header() {
           >
             全記事
           </Link>
+          <Link
+            href="/glossary"
+            className={`nav-link ${pathname === "/glossary" ? "active" : ""}`}
+          >
+            用語集
+          </Link>
         </nav>
       </div>
 
