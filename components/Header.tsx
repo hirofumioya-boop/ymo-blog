@@ -30,7 +30,7 @@ export default function Header() {
       >
         <Link href="/" className="site-title-link">
           <span className="title-full">非エンジニア社長がAI社員だけの会社を作ってみた</span>
-          <span className="title-short">AI社員だけの会社</span>
+          <span className="title-short">AI社員の会社</span>
         </Link>
 
         <nav style={{ display: "flex", gap: "24px", alignItems: "center" }}>
@@ -87,18 +87,24 @@ export default function Header() {
           }
           .title-short {
             display: inline;
-            font-size: 15px;
+            font-size: 14px;
           }
           .nav-link {
-            font-size: 12px !important;
+            font-size: 11px !important;
+          }
+          nav {
+            gap: 16px !important;
           }
         }
         @media (max-width: 400px) {
           .title-short {
-            font-size: 13px;
+            font-size: 12px;
+          }
+          .nav-link {
+            font-size: 10px !important;
           }
           nav {
-            gap: 16px !important;
+            gap: 12px !important;
           }
         }
       `}</style>
