@@ -7,6 +7,12 @@ export const metadata = {
 
 const terms = [
   {
+    term: "Agent（エージェント）",
+    reading: "エージェント",
+    description:
+      "AIが自律的にタスクを実行する仕組みのこと。単に質問に答えるだけでなく、ファイルを読む・コードを実行する・別のAIを呼び出すなど、複数のアクションを自分で判断しながら連続して行う。このブログに登場する真田さん（PM）は、Agentとして動作しており、社長の一言を受けて他のメンバーへの指示・結果の集約・報告までを自律的に進める。",
+  },
+  {
     term: "Anthropic",
     reading: "アンソロピック",
     description:
