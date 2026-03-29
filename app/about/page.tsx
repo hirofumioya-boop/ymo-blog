@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export const metadata = {
   title: "About",
-  description: "人とAIが共存する組織をデザインするコンサルタント。外資IT企業20年のキャリアとAIチーム運営の実体験を持つ著者のプロフィール。",
+  description: "人とAIが共存する組織をデザインする伴走者。外資IT企業22年のキャリアとAIチーム運営の実体験を持つ著者のプロフィール。",
 };
 
 export default function AboutPage() {
@@ -61,7 +61,7 @@ export default function AboutPage() {
           <h2>私について</h2>
 
           <p>
-            <strong>人とAIが共存する組織をデザインするコンサルタントです。</strong>
+            <strong>人とAIが共存する組織をデザインする伴走者です。</strong>
           </p>
 
           <p>
