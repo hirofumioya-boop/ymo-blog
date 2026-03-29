@@ -34,6 +34,8 @@ body {
   font-size: 18px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  word-break: auto-phrase;
+  overflow-wrap: break-word;
 }
 
 /* フォーカスアクセシビリティ */
