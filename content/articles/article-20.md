@@ -1,7 +1,7 @@
 ---
 number: 20
 slug: "article-20"
-title: "AIの「記憶」を作るために、非エンジニア社長がAPIを使った話"
+title: "非エンジニア社長がAPIを使った話——気づいたらVibe Codingをやっていた"
 date: "2026-03-29"
 tags: ["AI活用", "チームの作り方", "経営"]
 ---
