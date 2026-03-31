@@ -4,22 +4,6 @@ import matter from 'gray-matter';
 import { remark } from 'remark';
 import html from 'remark-html';
 import remarkGfm from 'remark-gfm';
-import { Parser } from './budoux/parser.js';
-import { model as jaModel } from './budoux/data/models/ja.js';
-
-const budouxParser = new Parser(jaModel);
-
-// HTMLタグを壊さずにテキストノードにだけBudouXを適用する
-function applyBudouxToHtml(htmlString: string): string {
-  return htmlString.replace(/(<[^>]+>)|([^<]+)/g, (match, tag, text) => {
-    if (tag) return tag;
-    if (text && text.trim()) {
-      const chunks = budouxParser.parse(text);
-      return chunks.length > 1 ? chunks.join('<wbr>') : text;
-    }
-    return text;
-  });
-}
 
 const articlesDirectory = path.join(process.cwd(), 'content/articles');
 
@@ -121,7 +105,7 @@ export async function getArticleBySlug(slug: string): Promise<Article | null> {
         .use(remarkGfm)
         .use(html, { sanitize: false })
         .process(content);
-      const contentHtml = applyBudouxToHtml(processedContent.toString());
+      const contentHtml = processedContent.toString();
 
       return {
         number: data.number as number,
