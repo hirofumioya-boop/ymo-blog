@@ -70,7 +70,7 @@ const terms = [
     term: "Dispatch",
     reading: "ディスパッチ",
     description:
-      "Anthropicが提供するClaudeの機能のひとつ。iPhoneなどのスマートフォン上のClaudeアプリと、Mac上で動いているClaude Codeを連携させ、外出先から遠隔でClaude Codeを操作できる。このブログNo.24では、社長が外出先のiPhoneからMac上の真田さんを呼び出し、ブログの更新作業を指示した様子が記録されている。「社長は外で人と会い、AI社員はオフィスで仕事をする」という働き方を実現する機能。",
+      "Anthropicが提供するClaudeの機能のひとつ。iPhoneなどのスマートフォン上のClaudeアプリと、Mac上で動いているClaude Codeを連携させ、外出先などから遠隔でClaude Codeを操作できる。このブログNo.24では、社長がiPhoneからMac上の真田さんを呼び出し、ブログの更新作業を指示した様子が記録されている。「社長は外で人と会い、AI社員はオフィスで仕事をする」という働き方を実現する機能。",
   },
   {
     term: "コーディング",
