@@ -56,7 +56,7 @@ export default function Footer() {
               color: "#6B7280",
             }}
           >
-            © 2026
+            © 2026 Yokohama Management Office G.K.（YMO）
           </p>
         </div>
       </div>
