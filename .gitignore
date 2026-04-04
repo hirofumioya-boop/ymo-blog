@@ -33,6 +33,14 @@ yarn-error.log*
 # env files (can opt-in for committing if needed)
 .env*
 
+# secrets / credentials
+*.key
+*.secret
+*_secret*
+*credentials*
+secrets.json
+config/secrets*
+
 # vercel
 .vercel
 
@@ -42,3 +50,11 @@ next-env.d.ts
 
 .vercel
 .env*.local
+
+# 内部ドキュメント（GitHubに公開しない）
+*.docx
+*.draft
+CLAUDE.md
+AGENTS.md
+content/failures/
+*.code-workspace
