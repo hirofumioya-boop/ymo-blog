@@ -169,6 +169,12 @@ const terms = [
       "ウェブページに「動き」をつけるプログラミング言語。ボタンを押したときの反応、画面の切り替え、データの動的表示などを担当する。HTMLが骨格なら、JavaScriptは筋肉にあたる。このブログの社内サイトはHTMLとJavaScriptで構築されている。",
   },
   {
+    term: "MCP（コネクター）",
+    reading: "エムシーピー（Model Context Protocol）",
+    description:
+      "Claude Codeを外部サービスと連携させる仕組みのこと。Anthropicが策定した規格で、正式名称はModel Context Protocol。GmailやGoogleカレンダー、ブラウザ操作ツール（Playwright）などをClaude Codeに接続することで、AIが直接メールを読んだり、カレンダーを確認したり、Chromeを操作したりできるようになる。このブログでは「コネクター」という呼び方で紹介している。No.31では、コネクターの導入によって「社長が自分でブラウザを開いてスクリーンショットを撮り、AIに貼り付けていた作業」が、「AIが自分でサイトにアクセスして確認してくる」に変わった体験が描かれている。",
+  },
+  {
     term: "memory_updater.py",
     reading: "メモリーアップデーター ドットパイ",
     description:
