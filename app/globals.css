@@ -1,0 +1,215 @@
+@import "tailwindcss";
+
+@theme inline {
+  /* YMOブログカラーパレット */
+  --color-deep-navy: #1A2332;
+  --color-terracotta: #C4603A;
+  --color-terracotta-hover: #D97754;
+  --color-off-white: #F7F5F0;
+  --color-pure-white: #FFFFFF;
+  --color-light-gray: #EDEDEA;
+  --color-middle-gray: #6B7280;
+  --color-muted-gray: #9CA3AF;
+  --color-border: #E2DDD6;
+
+  /* フォント */
+  --font-serif-ja: "Noto Serif JP", "游明朝", Georgia, serif;
+  --font-sans-ja: "Noto Sans JP", "ヒラギノ角ゴ Pro", sans-serif;
+  --font-serif-en: "DM Serif Display", Georgia, serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background-color: #F7F5F0;
+  color: #1A2332;
+  font-family: "Noto Serif JP", "游明朝", Georgia, serif;
+  line-height: 1.9;
+  font-size: 18px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  word-break: auto-phrase;
+  overflow-wrap: break-word;
+}
+
+/* フォーカスアクセシビリティ */
+*:focus-visible {
+  outline: 2px solid #C4603A;
+  outline-offset: 3px;
+}
+
+/* 記事本文スタイル */
+.article-body {
+  font-family: "Noto Serif JP", "游明朝", Georgia, serif;
+  font-size: 18px;
+  line-height: 1.9;
+  color: #1A2332;
+}
+
+@media (max-width: 640px) {
+  .article-body {
+    font-size: 16px;
+  }
+}
+
+.article-body h2 {
+  font-size: 26px;
+  font-weight: 700;
+  line-height: 1.4;
+  margin-top: 48px;
+  margin-bottom: 24px;
+  color: #1A2332;
+}
+
+.article-body h3 {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.5;
+  margin-top: 32px;
+  margin-bottom: 16px;
+  color: #1A2332;
+}
+
+.article-body p {
+  margin-bottom: 28px;
+}
+
+.article-body a {
+  color: #C4603A;
+  border-bottom: 1px solid #C4603A;
+  text-decoration: none;
+  transition: color 150ms ease, border-color 150ms ease;
+}
+
+.article-body a:hover {
+  color: #D97754;
+  border-bottom-color: #D97754;
+}
+
+.article-body strong {
+  font-weight: 700;
+}
+
+.article-body blockquote {
+  border-left: 3px solid #C4603A;
+  margin: 32px 0;
+  padding: 16px 24px;
+  background-color: #EDEDEA;
+  font-size: 16px;
+  color: #1A2332;
+}
+
+.article-body blockquote p {
+  margin-bottom: 8px;
+}
+
+.article-body blockquote p:last-child {
+  margin-bottom: 0;
+}
+
+.article-body ul,
+.article-body ol {
+  margin-bottom: 28px;
+  padding-left: 1.5em;
+}
+
+.article-body li {
+  margin-bottom: 8px;
+}
+
+.article-body hr {
+  border: none;
+  border-top: 1px solid #E2DDD6;
+  margin: 48px 0;
+}
+
+.article-body code {
+  font-family: monospace;
+  background-color: #EDEDEA;
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-size: 0.875em;
+}
+
+.article-body table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 28px;
+  font-size: 15px;
+}
+
+.article-body th,
+.article-body td {
+  border: 1px solid #E2DDD6;
+  padding: 10px 16px;
+  text-align: left;
+}
+
+.article-body th {
+  background-color: #EDEDEA;
+  font-weight: 600;
+}
+
+/* 行間クランプユーティリティ */
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* 記事カード */
+.article-card article {
+  transition: box-shadow 200ms ease;
+}
+
+.article-card:hover article {
+  box-shadow: 0 4px 16px rgba(26,35,50,0.08);
+}
+
+.article-card-medium:hover article h3 {
+  color: #C4603A;
+}
+
+.read-more-link {
+  font-family: "Noto Sans JP", "ヒラギノ角ゴ Pro", sans-serif;
+  font-size: 14px;
+  color: #C4603A;
+  text-decoration: none;
+}
+
+/* ナビリンク */
+.nav-link {
+  font-family: "Noto Sans JP", "ヒラギノ角ゴ Pro", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: #6B7280;
+  text-decoration: none;
+  transition: color 150ms ease;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: #C4603A;
+}
+
+/* 前後記事ナビ */
+.article-nav-link {
+  display: block;
+  padding: 20px;
+  background-color: #FFFFFF;
+  border: 1px solid #E2DDD6;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: box-shadow 200ms ease;
+}
+
+.article-nav-link:hover {
+  box-shadow: 0 4px 16px rgba(26,35,50,0.08);
+}
