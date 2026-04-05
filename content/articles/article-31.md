@@ -115,3 +115,11 @@ GmailとGoogleカレンダーはAnthropicが提供する公式のもので、設
 すでに使い始めている人は、この4つを見て「自分はどの柱をまだ立てていないか」を確認してみてほしい。それが、次のステップになるかもしれない。
 
 気づいたら、あなたも自分だけのチームができているはずだ。
+
+---
+
+## お問い合わせ
+
+ご意見・ご相談などありましたらお気軽にどうぞ。
+
+[→ お問い合わせはこちら](https://docs.google.com/forms/d/e/1FAIpQLSfaht-CZQzRsCoHkc1GEXk4DMipHM0DPQbX2hoxDlKbGsMXlCg/viewform)
