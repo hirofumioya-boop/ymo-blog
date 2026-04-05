@@ -1,7 +1,7 @@
 ---
 number: 31
 slug: "article-31"
-title: "Claude Codeには4つの柱がある。気づいたら全部、自分たちで作っていた。"
+title: "Claude Codeの4つの柱。気づいたら全部、自分たちで作っていた。"
 date: "2026-04-05"
 tags: ["AI活用", "チームの作り方", "経営"]
 ---
