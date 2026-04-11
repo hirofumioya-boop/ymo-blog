@@ -1,7 +1,7 @@
 ---
 number: 1
 slug: "article-01"
-title: "Claude Codeで\"架空の社員\"を雇ったら、本当に仕事をしてくれた"
+title: "Claude Codeで\"チーム\"を作ったら、本当に仕事をしてくれた"
 date: "2026-03-25"
 tags: ["チームの作り方", "AI活用", "組織論"]
 ---
