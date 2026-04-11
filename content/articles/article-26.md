@@ -26,7 +26,7 @@ tags: ["AI活用", "セキュリティ", "経営"]
 
 ## Dispatchを試して、改めて向き合った
 
-先日、Claudeの新機能「Dispatch」がリリースされた。iPhoneからMac上のClaude Codeを遠隔操作できる機能だ。
+記事No.24でも書いたが、先日、Claudeの新機能「Dispatch」がリリースされた。iPhoneからMac上のClaude Codeを遠隔操作できる機能だ。
 
 早速試してみた。外出先のiPhoneから真田さんを呼び出し、ブログの更新作業を指示する。すべて完了した。便利だった。
 
