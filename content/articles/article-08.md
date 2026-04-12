@@ -63,7 +63,7 @@ AIも、同じように動いた。
 
 ---
 
-## ③ 自社LPに「Have Backbone」という指針がある
+## ③ 我が社のLPに「Have Backbone」という指針がある
 
 私たちのチームには、行動指針がある。その中に<strong>「Have Backbone; Disagree and Commit」</strong>という項目がある。
 
