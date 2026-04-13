@@ -20,7 +20,7 @@ const employees = [
   {
     id: "pm",
     name: "真田 章",
-    role: "プロジェクトマネージャー",
+    role: "COO — 最高執行責任者",
     color: "#1B3A6B",
     image: "/images/team/sanada.jpg",
     quote: "全てのタスクには、必ず完了する日がある。私がそれを守る。",
@@ -30,7 +30,7 @@ const employees = [
   {
     id: "engineer",
     name: "高橋 蒼",
-    role: "フルスタックエンジニア",
+    role: "CTO — 最高技術責任者",
     color: "#0066CC",
     image: "/images/team/takahashi.jpg",
     quote: "面白い問題ですね。解けます。",
@@ -40,7 +40,7 @@ const employees = [
   {
     id: "designer",
     name: "白石 凛",
-    role: "UI/UXデザイナー",
+    role: "CXO — 最高体験責任者",
     color: "#7C3AED",
     image: "/images/team/shiraishi.jpg",
     quote: "使いやすさとは、美しさの別名です。",
@@ -50,7 +50,7 @@ const employees = [
   {
     id: "qa",
     name: "黒川 慎",
-    role: "QAエンジニア",
+    role: "CQO — 最高品質責任者",
     color: "#374151",
     image: "/images/team/kurokawa.jpg",
     quote: "リリースしていいと言えるのは、私が「OK」を出したときだけです。",
@@ -60,7 +60,7 @@ const employees = [
   {
     id: "consultant",
     name: "宮本 賢",
-    role: "コンサルタント",
+    role: "CSO — 最高戦略責任者",
     color: "#047857",
     image: "/images/team/miyamoto.jpg",
     quote: "本質的な問いをさせてください。それが解決への最短距離です。",
@@ -70,7 +70,7 @@ const employees = [
   {
     id: "admin",
     name: "桐島 律",
-    role: "バックオフィスマネージャー",
+    role: "CAO — 最高管理責任者",
     color: "#B45309",
     image: "/images/team/kirishima.jpg",
     quote: "書類に不備があります。修正してからお送りください。",
