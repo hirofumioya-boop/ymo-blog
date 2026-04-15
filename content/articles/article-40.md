@@ -1,5 +1,5 @@
 ---
-number: 40
+number: 41
 slug: "article-40"
 title: "AIにコンサルの分析手法を教えようとしたら、すでに知っていた話"
 date: "2026-04-14"
