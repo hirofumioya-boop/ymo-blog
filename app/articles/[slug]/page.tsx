@@ -65,7 +65,7 @@ export default async function ArticlePage({ params }: Props) {
           <div style={{ marginBottom: "40px" }}>
             <p
               style={{
-                fontFamily: '"Noto Sans JP", "ヒラギノ角ゴ Pro", sans-serif',
+                fontFamily: '"DM Serif Display", Georgia, serif',
                 fontSize: "12px",
                 fontWeight: 500,
                 color: "#9CA3AF",

@@ -23,7 +23,7 @@ export default function Home() {
             fontFamily: '"Noto Serif JP", "游明朝", Georgia, serif',
             fontSize: "32px",
             fontWeight: 700,
-            color: "#1B3A6B",
+            color: "#1A2332",
             marginBottom: "16px",
             letterSpacing: "0.05em",
           }}
@@ -106,7 +106,7 @@ export default function Home() {
             fontFamily: '"Noto Serif JP", "游明朝", Georgia, serif',
             fontSize: "18px",
             fontWeight: 700,
-            color: "#1B3A6B",
+            color: "#1A2332",
           }}
         >
           3日前の私も、同じことを思っていました。

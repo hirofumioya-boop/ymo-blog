@@ -72,20 +72,18 @@ export default function Header() {
       </header>
 
       {/* モバイルドロップダウンメニュー */}
-      {menuOpen && (
-        <div className="mobile-menu">
-          {NAV_ITEMS.map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              className={`mobile-nav-link ${item.match(pathname) ? "active" : ""}`}
-              onClick={() => setMenuOpen(false)}
-            >
-              {item.label}
-            </Link>
-          ))}
-        </div>
-      )}
+      <div className={`mobile-menu${menuOpen ? " open" : ""}`}>
+        {NAV_ITEMS.map((item) => (
+          <Link
+            key={item.href}
+            href={item.href}
+            className={`mobile-nav-link ${item.match(pathname) ? "active" : ""}`}
+            onClick={() => setMenuOpen(false)}
+          >
+            {item.label}
+          </Link>
+        ))}
+      </div>
 
       <style>{`
         .site-title-link {
@@ -160,6 +158,15 @@ export default function Header() {
           border-bottom: 1px solid #E2DDD6;
           z-index: 99;
           flex-direction: column;
+          opacity: 0;
+          transform: translateY(-6px);
+          pointer-events: none;
+          transition: opacity 200ms ease, transform 200ms ease;
+        }
+        .mobile-menu.open {
+          opacity: 1;
+          transform: translateY(0);
+          pointer-events: auto;
         }
         .mobile-nav-link {
           display: block;
