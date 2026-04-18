@@ -61,7 +61,8 @@ export default function Header() {
           <button
             className="hamburger-btn"
             onClick={() => setMenuOpen((prev) => !prev)}
-            aria-label="メニューを開く"
+            aria-label={menuOpen ? "メニューを閉じる" : "メニューを開く"}
+            aria-expanded={menuOpen}
           >
             <span className={`hamburger-line ${menuOpen ? "open-1" : ""}`} />
             <span className={`hamburger-line ${menuOpen ? "open-2" : ""}`} />
