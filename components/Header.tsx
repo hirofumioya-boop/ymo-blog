@@ -53,6 +53,12 @@ export default function Header() {
             全記事
           </Link>
           <Link
+            href="/ai-mindset"
+            className={`nav-link ${pathname === "/ai-mindset" ? "active" : ""}`}
+          >
+            AIとの向き合い方
+          </Link>
+          <Link
             href="/glossary"
             className={`nav-link ${pathname === "/glossary" ? "active" : ""}`}
           >
