@@ -4,8 +4,8 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "非エンジニア社長がAI社員だけの会社を作ってみた",
-  description: "非エンジニアがAIだけの社員チームを作ってIT会社の運営をスタートした実録ブログ。AIと経営と、人について書いています。",
+  title: "AIが気になる。でもとっかかりがわからない。",
+  description: "AIは技術の話じゃなかった。経営者なら誰でも知っている、組織論の話だった。非エンジニア社長が実践した全記録。",
 };
 
 export default function RootLayout({

@@ -37,7 +37,7 @@ export default function Home() {
             letterSpacing: "0.05em",
           }}
         >
-          非エンジニア社長がAI社員だけの会社を作ってみた
+          AIが気になる。でもとっかかりがわからない。
         </h1>
         <p
           style={{
@@ -45,21 +45,32 @@ export default function Home() {
             fontSize: "16px",
             color: "#6B7280",
             lineHeight: 1.8,
+            marginBottom: "8px",
           }}
         >
-          AIと組織運営について書いています。
+          やってみてわかった——これは技術の話じゃなかった。
         </p>
         <p
           style={{
             fontFamily: '"Noto Sans JP", "ヒラギノ角ゴ Pro", sans-serif',
-            fontSize: "15px",
+            fontSize: "16px",
+            color: "#6B7280",
+            lineHeight: 1.8,
+            marginBottom: "8px",
+          }}
+        >
+          経営者なら誰でも知っている、組織論の話だった。
+        </p>
+        <p
+          style={{
+            fontFamily: '"Noto Sans JP", "ヒラギノ角ゴ Pro", sans-serif',
+            fontSize: "16px",
             color: "#C4603A",
-            marginTop: "16px",
+            lineHeight: 1.8,
             fontWeight: 500,
           }}
         >
-          このサイトのデザイン・開発は、100% 私のAIチームが担当しました。
-          詳細は、<Link href="/articles/article-14" style={{ color: "#C4603A", textDecoration: "underline" }}>記事No.14</Link>と<Link href="/articles/article-16" style={{ color: "#C4603A", textDecoration: "underline" }}>記事No.16</Link>をご覧ください。
+          非エンジニア社長が実践した、全記録。
         </p>
       </section>
 
@@ -116,9 +127,22 @@ export default function Home() {
             fontSize: "18px",
             fontWeight: 700,
             color: "#1A2332",
+            marginBottom: "24px",
           }}
         >
           3日前の私も、同じことを思っていました。
+        </p>
+        <p
+          style={{
+            fontFamily: '"Noto Sans JP", "ヒラギノ角ゴ Pro", sans-serif',
+            fontSize: "14px",
+            color: "#C4603A",
+            lineHeight: 1.8,
+            fontWeight: 500,
+          }}
+        >
+          このサイトのデザイン・開発は、100% 私のAIチームが担当しました。
+          詳細は、<Link href="/articles/article-14" style={{ color: "#C4603A", textDecoration: "underline" }}>記事No.14</Link>と<Link href="/articles/article-16" style={{ color: "#C4603A", textDecoration: "underline" }}>記事No.16</Link>をご覧ください。
         </p>
       </section>
 
