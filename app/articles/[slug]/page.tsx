@@ -17,7 +17,7 @@ export async function generateMetadata({ params }: Props) {
   const article = await getArticleBySlug(slug);
   if (!article) return {};
 
-  const articleUrl = `https://www.y-m-o.jp/articles/${slug}`;
+  const articleUrl = `https://blog.y-m-o.jp/articles/${slug}`;
 
   return {
     title: article.title,

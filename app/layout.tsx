@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'ja_JP',
-    url: 'https://www.y-m-o.jp',
+    url: 'https://blog.y-m-o.jp',
     siteName: 'YMOブログ',
     title: siteTitle,
     description: siteDescription,
