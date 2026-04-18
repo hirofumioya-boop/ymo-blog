@@ -1,6 +1,7 @@
 import { getArticleBySlug, getAllArticles, getAllSlugs, formatDate } from "@/lib/articles";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import ReadingProgress from "@/components/ReadingProgress";
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -40,6 +41,7 @@ export default async function ArticlePage({ params }: Props) {
 
   return (
     <div style={{ backgroundColor: "#F7F5F0", minHeight: "100vh" }}>
+      <ReadingProgress />
       <div
         style={{
           maxWidth: "1100px",

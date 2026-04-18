@@ -1,5 +1,6 @@
 import { getAllArticles } from "@/lib/articles";
 import ArticleCard from "@/components/ArticleCard";
+import AnimatedCard from "@/components/AnimatedCard";
 import Link from "next/link";
 
 export default function Home() {
@@ -18,6 +19,14 @@ export default function Home() {
           textAlign: "center",
         }}
       >
+        <div
+          style={{
+            width: "40px",
+            height: "2px",
+            backgroundColor: "#C4603A",
+            margin: "0 auto 20px",
+          }}
+        />
         <h1
           style={{
             fontFamily: '"Noto Serif JP", "游明朝", Georgia, serif',
@@ -181,8 +190,10 @@ export default function Home() {
         </div>
 
         <div className="article-grid">
-          {allArticles.map((article) => (
-            <ArticleCard key={article.slug} article={article} size="medium" />
+          {allArticles.map((article, index) => (
+            <AnimatedCard key={article.slug} index={index}>
+              <ArticleCard article={article} size="medium" />
+            </AnimatedCard>
           ))}
         </div>
       </section>
