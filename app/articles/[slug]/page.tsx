@@ -17,9 +17,24 @@ export async function generateMetadata({ params }: Props) {
   const article = await getArticleBySlug(slug);
   if (!article) return {};
 
+  const articleUrl = `https://www.y-m-o.jp/articles/${slug}`;
+
   return {
     title: article.title,
     description: article.excerpt,
+    openGraph: {
+      type: 'article',
+      title: article.title,
+      description: article.excerpt,
+      url: articleUrl,
+      publishedTime: article.date,
+      siteName: 'YMOブログ',
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: article.title,
+      description: article.excerpt,
+    },
   };
 }
 

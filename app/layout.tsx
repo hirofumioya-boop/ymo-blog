@@ -3,9 +3,25 @@ import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
+const siteTitle = "AIが気になる。でもとっかかりがわからない。";
+const siteDescription = "AIは技術の話じゃなかった。経営者なら誰でも知っている、組織論の話だった。非エンジニア社長が実践した全記録。";
+
 export const metadata: Metadata = {
-  title: "AIが気になる。でもとっかかりがわからない。",
-  description: "AIは技術の話じゃなかった。経営者なら誰でも知っている、組織論の話だった。非エンジニア社長が実践した全記録。",
+  title: siteTitle,
+  description: siteDescription,
+  openGraph: {
+    type: 'website',
+    locale: 'ja_JP',
+    url: 'https://www.y-m-o.jp',
+    siteName: 'YMOブログ',
+    title: siteTitle,
+    description: siteDescription,
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: siteTitle,
+    description: siteDescription,
+  },
 };
 
 export default function RootLayout({
