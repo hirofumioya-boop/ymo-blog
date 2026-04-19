@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import HashScroll from "@/components/HashScroll";
 
 const siteTitle = "AIが気になる。でもとっかかりがわからない。";
 const siteDescription = "AIは技術の話じゃなかった。経営者なら誰でも知っている、組織論の話だった。非エンジニア社長が実践した全記録。";
@@ -41,6 +42,7 @@ export default function RootLayout({
       </head>
       <body>
         <Header />
+        <HashScroll />
         <main>{children}</main>
         <Footer />
       </body>
