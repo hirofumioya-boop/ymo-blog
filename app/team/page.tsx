@@ -139,67 +139,69 @@ export default function TeamPage() {
               borderTop: `3px solid ${president.color}`,
               borderRadius: "4px",
               padding: "28px 32px",
-              display: "flex",
-              gap: "24px",
-              alignItems: "flex-start",
             }}
           >
-            <div style={{ flexShrink: 0 }}>
-              <Image
-                src={president.image}
-                alt={president.label}
-                width={64}
-                height={64}
-                style={{ borderRadius: "50%", objectFit: "cover" }}
-              />
-            </div>
-            <div style={{ flex: 1 }}>
-              <div style={{ display: "flex", alignItems: "baseline", gap: "12px", marginBottom: "6px" }}>
-                <span
-                  style={{
-                    fontFamily: '"Noto Serif JP", serif',
-                    fontSize: "18px",
-                    fontWeight: 700,
-                    color: "#1A2332",
-                  }}
-                >
-                  {president.label}
-                </span>
-                <span
-                  style={{
-                    fontFamily: '"Noto Sans JP", sans-serif',
-                    fontSize: "12px",
-                    color: "#9CA3AF",
-                  }}
-                >
-                  {president.role}
-                </span>
+            {/* 写真 + 名前・役職 */}
+            <div style={{ display: "flex", alignItems: "center", gap: "14px", marginBottom: "14px" }}>
+              <div style={{ flexShrink: 0 }}>
+                <Image
+                  src={president.image}
+                  alt={president.label}
+                  width={64}
+                  height={64}
+                  style={{ borderRadius: "50%", objectFit: "cover" }}
+                />
               </div>
-              <p
-                style={{
-                  fontFamily: '"Noto Serif JP", serif',
-                  fontSize: "13px",
-                  fontWeight: 700,
-                  color: president.color,
-                  fontStyle: "italic",
-                  marginBottom: "12px",
-                  lineHeight: 1.7,
-                }}
-              >
-                「{president.quote}」
-              </p>
-              <p
-                style={{
-                  fontFamily: '"Noto Sans JP", sans-serif',
-                  fontSize: "14px",
-                  color: "#4B5563",
-                  lineHeight: 1.8,
-                  margin: 0,
-                }}
-              >
-                {president.description}
-              </p>
+              <div>
+                <div style={{ display: "flex", alignItems: "baseline", gap: "12px", marginBottom: "4px" }}>
+                  <span
+                    style={{
+                      fontFamily: '"Noto Serif JP", serif',
+                      fontSize: "18px",
+                      fontWeight: 700,
+                      color: "#1A2332",
+                    }}
+                  >
+                    {president.label}
+                  </span>
+                  <span
+                    style={{
+                      fontFamily: '"Noto Sans JP", sans-serif',
+                      fontSize: "12px",
+                      color: "#9CA3AF",
+                    }}
+                  >
+                    {president.role}
+                  </span>
+                </div>
+              </div>
             </div>
+            {/* 名言（全幅） */}
+            <p
+              style={{
+                fontFamily: '"Noto Serif JP", serif',
+                fontSize: "13px",
+                fontWeight: 700,
+                color: president.color,
+                fontStyle: "italic",
+                marginBottom: "12px",
+                lineHeight: 1.7,
+              }}
+            >
+              「{president.quote}」
+            </p>
+            {/* 説明文（全幅） */}
+            <p
+              style={{
+                fontFamily: '"Noto Sans JP", sans-serif',
+                fontSize: "14px",
+                color: "#4B5563",
+                lineHeight: 1.8,
+                margin: 0,
+              }}
+            >
+              {president.description}
+            </p>
           </div>
         </div>
 
