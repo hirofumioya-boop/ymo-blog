@@ -679,7 +679,7 @@ export default function GlossaryPage() {
                   fontWeight: 700,
                   color: "#1A2332",
                   marginBottom: "4px",
-                  scrollMarginTop: "240px",
+                  scrollMarginTop: "280px",
                 }}
               >
                 {item.term}
