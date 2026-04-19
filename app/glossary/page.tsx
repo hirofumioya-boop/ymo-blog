@@ -622,9 +622,15 @@ export default function GlossaryPage() {
         `}</style>
         <div
           style={{
+            position: "sticky",
+            top: 0,
+            zIndex: 10,
+            backgroundColor: "#F7F5F0",
+            borderBottom: "1px solid #E2DDD6",
             display: "flex",
             flexWrap: "wrap",
             gap: "4px",
+            padding: "12px 0",
             marginBottom: "32px",
           }}
         >
