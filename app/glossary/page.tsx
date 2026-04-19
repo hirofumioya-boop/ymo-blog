@@ -623,7 +623,7 @@ export default function GlossaryPage() {
         <div
           style={{
             position: "sticky",
-            top: 0,
+            top: "64px",
             zIndex: 10,
             backgroundColor: "#F7F5F0",
             borderBottom: "1px solid #E2DDD6",
@@ -677,7 +677,7 @@ export default function GlossaryPage() {
                   fontWeight: 700,
                   color: "#1A2332",
                   marginBottom: "4px",
-                  scrollMarginTop: "88px",
+                  scrollMarginTop: "120px",
                 }}
               >
                 {item.term}
