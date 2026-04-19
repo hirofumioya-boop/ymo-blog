@@ -30,15 +30,15 @@ tags: ["AI活用", "チームの作り方", "経営"]
 
 AIの進化段階は、大きく3つの階層で語られることが多い。
 
-<strong>[ANI](/glossary)（Artificial Narrow Intelligence）特化型AI</strong>
+<strong>[ANI](/glossary#ani)（Artificial Narrow Intelligence）特化型AI</strong>
 
 現在存在するすべてのAIがここに含まれる。画像認識、音声アシスタント、チェスAI、そして私たちが毎日使っているClaude。いずれも、特定のタスクにおいては人間を大幅に上回る能力を持つ。しかし、チェスが強くても料理はできない。一つの領域に最適化されており、汎用性はない。
 
-<strong>[AGI](/glossary)（Artificial General Intelligence）汎用AI</strong>
+<strong>[AGI](/glossary#agi)（Artificial General Intelligence）汎用AI</strong>
 
 人間と同等の「汎用的な知能」を持つAI。あらゆる知的タスクを理解し、学習し、応用できる。自律的に目標を立て、未知の問題を解き、自分の思考を評価する——そういった能力を持つ。現時点では、まだ実現していない。
 
-<strong>[ASI](/glossary)（Artificial Superintelligence）超知能AI</strong>
+<strong>[ASI](/glossary#asi)（Artificial Superintelligence）超知能AI</strong>
 
 人間の知能をあらゆる領域で圧倒的に超えた存在。自己改善を繰り返し、科学理論を自律的に生み出すとも言われる。今のところは理論上の概念だ。
 
