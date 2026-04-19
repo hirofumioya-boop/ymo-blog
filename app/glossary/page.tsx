@@ -586,86 +586,88 @@ export default function GlossaryPage() {
 
   return (
     <div style={{ backgroundColor: "#F7F5F0", minHeight: "100vh" }}>
+
+      {/* sticky ヘッダー（タイトル + 説明文 + インデックス） */}
+      <div
+        style={{
+          position: "sticky",
+          top: "64px",
+          zIndex: 10,
+          backgroundColor: "#F7F5F0",
+          borderBottom: "1px solid #E2DDD6",
+        }}
+      >
+        <div
+          style={{
+            maxWidth: "720px",
+            margin: "0 auto",
+            padding: "32px 24px 16px",
+          }}
+        >
+          <h1
+            style={{
+              fontFamily: '"Noto Serif JP", "游明朝", Georgia, serif',
+              fontSize: "28px",
+              fontWeight: 700,
+              color: "#1A2332",
+              marginBottom: "12px",
+            }}
+          >
+            用語集
+          </h1>
+          <p
+            style={{
+              fontFamily: '"Noto Sans JP", "ヒラギノ角ゴ Pro", sans-serif',
+              fontSize: "14px",
+              color: "#6B7280",
+              marginBottom: "16px",
+              lineHeight: 1.8,
+            }}
+          >
+            このブログに登場するIT・AI用語をわかりやすく解説します。
+          </p>
+
+          <style>{`
+            .glossary-index-item { color: #6B7280; }
+            .glossary-index-item:hover { color: #C4603A; }
+          `}</style>
+          <div
+            style={{
+              display: "flex",
+              flexWrap: "nowrap",
+              overflowX: "auto",
+              gap: "4px",
+              paddingBottom: "12px",
+            }}
+          >
+            {indexItems.map((item) => (
+              <a
+                key={item.label}
+                href={`#${item.id}`}
+                className="glossary-index-item"
+                style={{
+                  fontFamily: '"Noto Sans JP", "ヒラギノ角ゴ Pro", sans-serif',
+                  fontSize: "15px",
+                  textDecoration: "none",
+                  padding: "4px 10px",
+                  transition: "color 0.15s",
+                }}
+              >
+                {item.label}
+              </a>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* 用語リスト（スクロールする部分） */}
       <div
         style={{
           maxWidth: "720px",
           margin: "0 auto",
-          padding: "64px 24px 96px",
+          padding: "32px 24px 96px",
         }}
       >
-        <h1
-          style={{
-            fontFamily: '"Noto Serif JP", "游明朝", Georgia, serif',
-            fontSize: "28px",
-            fontWeight: 700,
-            color: "#1A2332",
-            marginBottom: "12px",
-          }}
-        >
-          用語集
-        </h1>
-        <p
-          style={{
-            fontFamily: '"Noto Sans JP", "ヒラギノ角ゴ Pro", sans-serif',
-            fontSize: "14px",
-            color: "#6B7280",
-            marginBottom: "24px",
-            lineHeight: 1.8,
-          }}
-        >
-          このブログに登場するIT・AI用語をわかりやすく解説します。
-        </p>
-
-        <style>{`
-          .glossary-index-item { color: #6B7280; }
-          .glossary-index-item:hover { color: #C4603A; }
-        `}</style>
-        <div
-          style={{
-            position: "sticky",
-            top: "64px",
-            zIndex: 10,
-            backgroundColor: "#F7F5F0",
-            borderBottom: "1px solid #E2DDD6",
-            display: "flex",
-            flexWrap: "nowrap",
-            overflowX: "auto",
-            gap: "4px",
-            marginTop: 0,
-            marginRight: "-24px",
-            marginBottom: "32px",
-            marginLeft: "-24px",
-            paddingTop: "12px",
-            paddingBottom: "12px",
-            paddingLeft: "24px",
-            paddingRight: "24px",
-          }}
-        >
-          {indexItems.map((item) => (
-            <a
-              key={item.label}
-              href={`#${item.id}`}
-              className="glossary-index-item"
-              style={{
-                fontFamily: '"Noto Sans JP", "ヒラギノ角ゴ Pro", sans-serif',
-                fontSize: "15px",
-                textDecoration: "none",
-                padding: "4px 10px",
-                transition: "color 0.15s",
-              }}
-            >
-              {item.label}
-            </a>
-          ))}
-        </div>
-
-        <div
-          style={{
-            borderTop: "1px solid #E2DDD6",
-            marginBottom: "40px",
-          }}
-        />
-
         <div style={{ display: "flex", flexDirection: "column", gap: "32px" }}>
           {sortedTerms.map((item) => (
             <div key={item.term}>
@@ -677,7 +679,7 @@ export default function GlossaryPage() {
                   fontWeight: 700,
                   color: "#1A2332",
                   marginBottom: "4px",
-                  scrollMarginTop: "120px",
+                  scrollMarginTop: "240px",
                 }}
               >
                 {item.term}
@@ -726,6 +728,7 @@ export default function GlossaryPage() {
           </Link>
         </div>
       </div>
+
     </div>
   );
 }
