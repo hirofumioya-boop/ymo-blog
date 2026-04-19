@@ -628,10 +628,17 @@ export default function GlossaryPage() {
             backgroundColor: "#F7F5F0",
             borderBottom: "1px solid #E2DDD6",
             display: "flex",
-            flexWrap: "wrap",
+            flexWrap: "nowrap",
+            overflowX: "auto",
             gap: "4px",
-            padding: "12px 0",
+            marginTop: 0,
+            marginRight: "-24px",
             marginBottom: "32px",
+            marginLeft: "-24px",
+            paddingTop: "12px",
+            paddingBottom: "12px",
+            paddingLeft: "24px",
+            paddingRight: "24px",
           }}
         >
           {indexItems.map((item) => (
