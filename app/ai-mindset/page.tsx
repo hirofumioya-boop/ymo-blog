@@ -3,7 +3,7 @@ import Link from "next/link";
 export const metadata = {
   title: "AIとの向き合い方",
   description:
-    "AIを使いこなせるかどうかは、AIの性能より、使う人間の問いかけ方で決まる。AI経営参謀をより深く活用するための考え方を整理しました。",
+    "AIを使いこなせるかどうかは、AIの性能より、使う人間の問いかけ方で決まる。AI参謀をより深く活用するための考え方を整理しました。",
 };
 
 const principles = [
@@ -190,7 +190,7 @@ export default function AiMindsetPage() {
               marginBottom: "16px",
             }}
           >
-            AI経営参謀は、ChatGPTやClaude（汎用AIチャット）とは異なります。
+            AI参謀は、ChatGPTやClaude（汎用AIチャット）とは異なります。
           </p>
           <p
             style={{
@@ -212,7 +212,7 @@ export default function AiMindsetPage() {
               marginBottom: "16px",
             }}
           >
-            AI経営参謀は、あなたの文脈を積み重ねます。事業の課題、経営判断の背景、大切にしている価値観——これらを記憶し、対話を重ねるごとに助言の精度が上がります。使えば使うほど、あなたを知っている相手になっていく。
+            AI参謀は、あなたの文脈を積み重ねます。事業の課題、経営判断の背景、大切にしている価値観——これらを記憶し、対話を重ねるごとに助言の精度が上がります。使えば使うほど、あなたを知っている相手になっていく。
           </p>
           <p
             style={{
@@ -321,7 +321,7 @@ export default function AiMindsetPage() {
               lineHeight: 1.8,
             }}
           >
-            AI経営参謀との対話を最大限活用するための原則です。
+            AI参謀との対話を最大限活用するための原則です。
           </p>
 
           <div style={{ display: "flex", flexDirection: "column", gap: "32px" }}>
@@ -393,7 +393,7 @@ export default function AiMindsetPage() {
               marginBottom: "16px",
             }}
           >
-            AI経営参謀は、使えば使うほどあなたの文脈を知っていきます。最初から完璧な対話でなくて構いません。試しながら、問いかけながら、少しずつ関係を深めてください。
+            AI参謀は、使えば使うほどあなたの文脈を知っていきます。最初から完璧な対話でなくて構いません。試しながら、問いかけながら、少しずつ関係を深めてください。
           </p>
           <p
             style={{
