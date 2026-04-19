@@ -97,7 +97,7 @@ export default function Header() {
           min-width: 0;
         }
         .site-title-link:hover {
-          color: #1A2332;
+          color: #C4603A;
         }
         .title-short {
           display: none;
@@ -110,16 +110,23 @@ export default function Header() {
         }
         .nav-link {
           font-size: 12px;
-          color: #4A5568;
+          font-weight: 500;
+          color: #1A2332;
           text-decoration: none;
           white-space: nowrap;
+          padding-bottom: 4px;
+          border-bottom: 1px solid #D6D0C8;
+          transition: color 0.2s ease, border-bottom-color 0.2s ease, font-weight 0.2s ease;
         }
         .nav-link.active {
-          color: #1A2332;
+          color: #C4603A;
           font-weight: 600;
+          border-bottom-color: #C4603A;
         }
         .nav-link:hover {
-          color: #1A2332;
+          color: #C4603A;
+          font-weight: 600;
+          border-bottom-color: #C4603A;
         }
         /* ハンバーガーボタン */
         .hamburger-btn {
