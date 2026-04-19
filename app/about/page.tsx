@@ -97,7 +97,7 @@ export default function AboutPage() {
 
           <p>
             <a
-              href="https://docs.google.com/forms/d/e/1FAIpQLSfaht-CZQzRsCoHc1GEXk4DMipHM0DPQbX2hoxDlKbGsMXlCg/viewform"
+              href="https://docs.google.com/forms/d/e/1FAIpQLSeR82s-uJGLj4elAYhbgi6u3Xg1XekG9CvsjfcNwYVydxjWcA/viewform"
               target="_blank"
               rel="noopener noreferrer"
             >

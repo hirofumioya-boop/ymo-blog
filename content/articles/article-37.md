@@ -148,4 +148,4 @@ AIチームを観察することは、組織の健康診断だと思っている
 
 ご意見・ご相談などありましたらお気軽にどうぞ。
 
-[→ お問い合わせはこちら](https://docs.google.com/forms/d/e/1FAIpQLSfaht-CZQzRsCoHkc1GEXk4DMipHM0DPQbX2hoxDlKbGsMXlCg/viewform)
+[→ お問い合わせはこちら](https://docs.google.com/forms/d/e/1FAIpQLSeR82s-uJGLj4elAYhbgi6u3Xg1XekG9CvsjfcNwYVydxjWcA/viewform)

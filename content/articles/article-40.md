@@ -140,4 +140,4 @@ EQ的文脈の蓄積が生む信頼とは、そういうものだと思ってい
 
 ご意見・ご相談などありましたらお気軽にどうぞ。
 
-[→ お問い合わせはこちら](https://docs.google.com/forms/d/e/1FAIpQLSfaht-CZQzRsCoHkc1GEXk4DMipHM0DPQbX2hoxDlKbGsMXlCg/viewform)
+[→ お問い合わせはこちら](https://docs.google.com/forms/d/e/1FAIpQLSeR82s-uJGLj4elAYhbgi6u3Xg1XekG9CvsjfcNwYVydxjWcA/viewform)
