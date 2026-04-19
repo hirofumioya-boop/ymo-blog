@@ -589,6 +589,7 @@ export default function GlossaryPage() {
 
       {/* sticky ヘッダー（タイトル + 説明文 + インデックス） */}
       <div
+        id="glossary-sticky-header"
         style={{
           position: "sticky",
           top: "64px",
@@ -630,8 +631,7 @@ export default function GlossaryPage() {
           <style>{`
             .glossary-index-item { color: #6B7280; }
             .glossary-index-item:hover { color: #C4603A; }
-            .glossary-term { scroll-margin-top: 280px; }
-            @media (max-width: 640px) { .glossary-term { scroll-margin-top: 340px; } }
+            .glossary-term { scroll-margin-top: var(--glossary-scroll-margin, 280px); }
           `}</style>
           <div
             style={{
@@ -731,6 +731,22 @@ export default function GlossaryPage() {
         </div>
       </div>
 
+      {/* 動的 scroll-margin-top: sticky ヘッダーの実際の高さを CSS 変数にセット */}
+      {/* dangerouslySetInnerHTML の内容は固定スクリプトのみ（外部入力なし・XSSリスクなし） */}
+      {/* eslint-disable-next-line react/no-danger */}
+      <script dangerouslySetInnerHTML={{__html: `
+        (function() {
+          function update() {
+            var el = document.getElementById('glossary-sticky-header');
+            if (el) {
+              var total = 64 + el.offsetHeight;
+              document.documentElement.style.setProperty('--glossary-scroll-margin', total + 'px');
+            }
+          }
+          update();
+          window.addEventListener('resize', update);
+        })();
+      `}} />
     </div>
   );
 }
