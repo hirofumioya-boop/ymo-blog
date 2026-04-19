@@ -7,6 +7,7 @@ import { useState } from "react";
 const NAV_ITEMS = [
   { href: "/about", label: "About", match: (p: string) => p === "/about" },
   { href: "/team", label: "チーム", match: (p: string) => p === "/team" },
+  { href: "/ai-sansho", label: "AI経営参謀", match: (p: string) => p === "/ai-sansho" },
   { href: "/articles", label: "全記事", match: (p: string) => p.startsWith("/articles") },
   { href: "/ai-mindset", label: "AIとの向き合い方", match: (p: string) => p === "/ai-mindset" },
   { href: "/glossary", label: "用語集", match: (p: string) => p === "/glossary" },
