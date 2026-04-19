@@ -268,7 +268,7 @@ export default function AiMindsetPage() {
                   <span
                     style={{
                       fontFamily: '"Noto Sans JP", "ヒラギノ角ゴ Pro", sans-serif',
-                      fontSize: "11px",
+                      fontSize: "14px",
                       color: "#C4603A",
                       fontWeight: 700,
                       letterSpacing: "0.05em",
@@ -340,7 +340,7 @@ export default function AiMindsetPage() {
                   <span
                     style={{
                       fontFamily: '"Noto Sans JP", "ヒラギノ角ゴ Pro", sans-serif',
-                      fontSize: "11px",
+                      fontSize: "14px",
                       color: "#C4603A",
                       fontWeight: 700,
                       letterSpacing: "0.05em",
