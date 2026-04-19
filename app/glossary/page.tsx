@@ -745,6 +745,9 @@ export default function GlossaryPage() {
           }
           update();
           window.addEventListener('resize', update);
+          if (document.fonts && document.fonts.ready) {
+            document.fonts.ready.then(update);
+          }
         })();
       `}} />
     </div>
