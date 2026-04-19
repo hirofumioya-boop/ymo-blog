@@ -561,10 +561,28 @@ const terms = [
   },
 ];
 
+const INDEX_ROWS = [
+  { label: "ア", chars: "アイウエオ" },
+  { label: "カ", chars: "カキクケコガギグゲゴ" },
+  { label: "サ", chars: "サシスセソザジズゼゾ" },
+  { label: "タ", chars: "タチツテトダヂヅデド" },
+  { label: "ナ", chars: "ナニヌネノ" },
+  { label: "ハ", chars: "ハヒフヘホバビブベボパピプペポ" },
+  { label: "マ", chars: "マミムメモ" },
+  { label: "ヤ", chars: "ヤユヨ" },
+  { label: "ラ", chars: "ラリルレロ" },
+  { label: "ワ", chars: "ワヲン" },
+];
+
 export default function GlossaryPage() {
   const sortedTerms = [...terms].sort((a, b) =>
     a.reading.localeCompare(b.reading, "ja-JP")
   );
+
+  const indexItems = INDEX_ROWS.flatMap((row) => {
+    const first = sortedTerms.find((t) => row.chars.includes(t.reading[0]));
+    return first ? [{ label: row.label, id: first.id }] : [];
+  });
 
   return (
     <div style={{ backgroundColor: "#F7F5F0", minHeight: "100vh" }}>
@@ -591,12 +609,44 @@ export default function GlossaryPage() {
             fontFamily: '"Noto Sans JP", "ヒラギノ角ゴ Pro", sans-serif',
             fontSize: "14px",
             color: "#6B7280",
-            marginBottom: "40px",
+            marginBottom: "24px",
             lineHeight: 1.8,
           }}
         >
           このブログに登場するIT・AI用語をわかりやすく解説します。
         </p>
+
+        <div
+          style={{
+            display: "flex",
+            flexWrap: "wrap",
+            gap: "4px",
+            marginBottom: "32px",
+          }}
+        >
+          {indexItems.map((item) => (
+            <a
+              key={item.label}
+              href={`#${item.id}`}
+              style={{
+                fontFamily: '"Noto Sans JP", "ヒラギノ角ゴ Pro", sans-serif',
+                fontSize: "15px",
+                color: "#6B7280",
+                textDecoration: "none",
+                padding: "4px 10px",
+                transition: "color 0.15s",
+              }}
+              onMouseEnter={(e) =>
+                ((e.currentTarget as HTMLAnchorElement).style.color = "#C4603A")
+              }
+              onMouseLeave={(e) =>
+                ((e.currentTarget as HTMLAnchorElement).style.color = "#6B7280")
+              }
+            >
+              {item.label}
+            </a>
+          ))}
+        </div>
 
         <div
           style={{
