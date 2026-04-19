@@ -630,6 +630,8 @@ export default function GlossaryPage() {
           <style>{`
             .glossary-index-item { color: #6B7280; }
             .glossary-index-item:hover { color: #C4603A; }
+            .glossary-term { scroll-margin-top: 280px; }
+            @media (max-width: 640px) { .glossary-term { scroll-margin-top: 340px; } }
           `}</style>
           <div
             style={{
@@ -673,13 +675,13 @@ export default function GlossaryPage() {
             <div key={item.term}>
               <h2
                 id={item.id}
+                className="glossary-term"
                 style={{
                   fontFamily: '"Noto Serif JP", "游明朝", Georgia, serif',
                   fontSize: "20px",
                   fontWeight: 700,
                   color: "#1A2332",
                   marginBottom: "4px",
-                  scrollMarginTop: "280px",
                 }}
               >
                 {item.term}
