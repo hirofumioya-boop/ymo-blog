@@ -616,6 +616,10 @@ export default function GlossaryPage() {
           このブログに登場するIT・AI用語をわかりやすく解説します。
         </p>
 
+        <style>{`
+          .glossary-index-item { color: #6B7280; }
+          .glossary-index-item:hover { color: #C4603A; }
+        `}</style>
         <div
           style={{
             display: "flex",
@@ -628,20 +632,14 @@ export default function GlossaryPage() {
             <a
               key={item.label}
               href={`#${item.id}`}
+              className="glossary-index-item"
               style={{
                 fontFamily: '"Noto Sans JP", "ヒラギノ角ゴ Pro", sans-serif',
                 fontSize: "15px",
-                color: "#6B7280",
                 textDecoration: "none",
                 padding: "4px 10px",
                 transition: "color 0.15s",
               }}
-              onMouseEnter={(e) =>
-                ((e.currentTarget as HTMLAnchorElement).style.color = "#C4603A")
-              }
-              onMouseLeave={(e) =>
-                ((e.currentTarget as HTMLAnchorElement).style.color = "#6B7280")
-              }
             >
               {item.label}
             </a>
