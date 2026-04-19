@@ -23,7 +23,7 @@ const terms = [
   {
     id: "ai-keiei-sanbo",
     term: "AI経営参謀",
-    reading: "エイアイけいえいさんぼう",
+    reading: "エイアイケイエイサンボウ",
     description:
       "経営者の隣に立つAI参謀チームのこと。このブログの運営会社が提供するサービス名でもある。汎用AIチャットツールとは異なり、その経営者の事業・価値観・意思決定の背景を深く理解した上で動く「専属参謀」として設計されている。主に2名体制（参謀長型＋作戦参謀型）で構成され、思考の整理・壁打ち・意思決定の補助を担う。「最後に決めるのは社長、参謀はその判断を最大化するために動く」という設計思想に基づいている。No.34では社長がこのサービス名を決め、チームをCxOに昇格させた日の記録が、No.41では第1号クライアントへのパイロット提供完了の記録が描かれている。",
   },
@@ -205,7 +205,7 @@ const terms = [
   {
     id: "sakusen-sanbo",
     term: "作戦参謀",
-    reading: "さくせんさんぼう",
+    reading: "サクセンサンボウ",
     description:
       "軍事組織において、戦術・作戦計画を立案する参謀のこと。「全体の戦略」より「個々の作戦の勝利」を担い、大胆な発想と機動力で動く。このブログのAI経営参謀サービスでは、2名体制の参謀のうち攻めを担う役割として設計されている。CSO型の性格を持ち、常識にとらわれない切り込み役として経営者の固定観念を揺さぶる問いを出す。日本近代史では、日露戦争の海戦作戦を立案した秋山真之が代表的な人物として知られる。",
   },
@@ -219,7 +219,7 @@ const terms = [
   {
     id: "sanbocho",
     term: "参謀長",
-    reading: "さんぼうちょう",
+    reading: "サンボウチョウ",
     description:
       "軍や組織において、参謀部門全体を統括するトップのこと。個々の作戦より全体最適を見渡し、意思決定をサポートする役割を担う。このブログのAI経営参謀サービスでは、2名体制の参謀のうち全体の取りまとめ役として設計されている。COO型の性格を持ち、経営者の発言を整理し議論の着地点を作る。日本近代史では、日露戦争全体を指揮した児玉源太郎が代表的な人物として知られる。",
   },
@@ -422,7 +422,7 @@ const terms = [
   {
     id: "psychological-safety",
     term: "心理的安全性",
-    reading: "しんりてきあんぜんせい（Psychological Safety）",
+    reading: "シンリテキアンゼンセイ（Psychological Safety）",
     description:
       "チームの中で、自分の意見・疑問・失敗を安心して口にできる状態のこと。Googleの研究（Project Aristotle）で、高いパフォーマンスを出すチームに共通する要素として注目された。「言いにくいことも言える雰囲気」「間違えても責められない文化」などが含まれる。このブログNo.12では、人間のチームで大切にしてきた心理的安全性が、AIチームにも同様に機能することが語られている。行動指針「Have Backbone; Disagree and Commit」を入れることで、AIも遠慮なく指摘するようになった。",
   },
@@ -485,6 +485,10 @@ const terms = [
 ];
 
 export default function GlossaryPage() {
+  const sortedTerms = [...terms].sort((a, b) =>
+    a.reading.localeCompare(b.reading, "ja-JP")
+  );
+
   return (
     <div style={{ backgroundColor: "#F7F5F0", minHeight: "100vh" }}>
       <div
@@ -525,7 +529,7 @@ export default function GlossaryPage() {
         />
 
         <div style={{ display: "flex", flexDirection: "column", gap: "32px" }}>
-          {terms.map((item) => (
+          {sortedTerms.map((item) => (
             <div key={item.term}>
               <h2
                 id={item.id}
