@@ -85,7 +85,7 @@ export function getAllArticles(): ArticleMeta[] {
         status: data.status as string | undefined,
         tags: data.tags as string[] | undefined,
         readingTime: calculateReadingTime(content),
-        excerpt: extractExcerpt(content),
+        excerpt: (data.excerpt as string) || extractExcerpt(content),
       };
     });
 
@@ -115,7 +115,7 @@ export async function getArticleBySlug(slug: string): Promise<Article | null> {
         status: data.status as string | undefined,
         tags: data.tags as string[] | undefined,
         readingTime: calculateReadingTime(content),
-        excerpt: extractExcerpt(content),
+        excerpt: (data.excerpt as string) || extractExcerpt(content),
         contentHtml,
       };
     }
