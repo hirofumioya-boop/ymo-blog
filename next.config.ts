@@ -34,16 +34,16 @@ const nextConfig: NextConfig = {
           {
             // コンテンツセキュリティポリシー
             // 読み込んでいい外部リソースの範囲を明示する
-            // Googleフォント・Googleフォームを許可している
+            // Googleフォント・Googleフォーム・GA4を許可している
             key: "Content-Security-Policy",
             value: [
               "default-src 'self'",
-              "script-src 'self' 'unsafe-inline'", // Next.jsの動作に必要
+              "script-src 'self' 'unsafe-inline' https://www.googletagmanager.com", // Next.jsの動作・GA4に必要
               "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
               "font-src 'self' https://fonts.gstatic.com",
               "frame-src https://docs.google.com", // Googleフォームリンク用
-              "img-src 'self' data:",
-              "connect-src 'self'",
+              "img-src 'self' data: https://www.google-analytics.com https://www.googletagmanager.com",
+              "connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://www.googletagmanager.com",
             ].join("; "),
           },
         ],
