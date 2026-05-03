@@ -75,7 +75,7 @@ AGIに必要とされる要素を改めて並べると、こうなる。
 <strong>長期記憶</strong> → profile.md・failure-log.mdに蓄積し、次の会話に引き継ぐ  
 <strong>自律判断</strong> → 役割定義（agent.md）で各社員の権限と思考の軸を設計する  
 <strong>複数視点の統合</strong> → PM・エンジニア・コンサルタントなど役割を分けて、異なる観点で検討する  
-<strong>メタ認知</strong> → 作業完了後に行動指針（我が社のLP）を使って自己評価を求める  
+<strong>メタ認知</strong> → 作業完了後に我が社の行動指針を使って自己評価を求める  
 <strong>継続学習</strong> → 失敗が起きるたびにCLAUDE.mdを更新し、組織の「憲法」を育てる
 
 ---
