@@ -3,7 +3,10 @@ import ArticleCard from "@/components/ArticleCard";
 
 export const metadata = {
   title: "全記事一覧",
-  description: "非エンジニア社長がAI社員だけの会社を作ってみた——全12本の記事一覧。",
+  description: "非エンジニア社長がAI社員だけの会社を作ってみた実録シリーズ——全記事一覧。",
+  openGraph: {
+    url: 'https://blog.y-m-o.jp/articles',
+  },
 };
 
 export default function ArticlesPage() {

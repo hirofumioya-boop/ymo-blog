@@ -4,6 +4,9 @@ export const metadata = {
   title: "AIとの向き合い方",
   description:
     "AIを使いこなせるかどうかは、AIの性能より、使う人間の問いかけ方で決まる。生成AIを使うすべての人に向けて、その考え方を整理しました。",
+  openGraph: {
+    url: 'https://blog.y-m-o.jp/ai-mindset',
+  },
 };
 
 const principles = [

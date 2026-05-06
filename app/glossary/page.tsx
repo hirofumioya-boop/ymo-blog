@@ -3,6 +3,9 @@ import Link from "next/link";
 export const metadata = {
   title: "用語集",
   description: "このブログに登場するIT・AI用語をわかりやすく解説します。",
+  openGraph: {
+    url: 'https://blog.y-m-o.jp/glossary',
+  },
 };
 
 const terms = [

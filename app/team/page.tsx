@@ -4,6 +4,9 @@ import Link from "next/link";
 export const metadata = {
   title: "チームについて",
   description: "AIだけの社員チームで会社を経営している。その6名を紹介します。",
+  openGraph: {
+    url: 'https://blog.y-m-o.jp/team',
+  },
 };
 
 const president = {
