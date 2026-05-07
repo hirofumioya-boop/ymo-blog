@@ -156,6 +156,43 @@ body {
   font-weight: 600;
 }
 
+/* サマリーブロック（TASK-188 2026-05-07） */
+.article-body .summary-block {
+  border-left: 3px solid #C4603A;
+  margin: 0 0 32px;
+  padding: 20px 24px;
+  background-color: #FFFFFF;
+  font-family: "Noto Serif JP", "游明朝", Georgia, serif;
+  font-size: 16px;
+  line-height: 1.85;
+  color: #1A2332;
+}
+
+.article-body .summary-block p {
+  margin-bottom: 10px;
+}
+
+.article-body .summary-block p:last-child {
+  margin-bottom: 0;
+}
+
+.article-body .summary-block a {
+  color: #C4603A;
+  border-bottom: 1px solid #C4603A;
+  text-decoration: none;
+}
+
+.article-body .summary-block a:hover {
+  color: #D97754;
+  border-bottom-color: #D97754;
+}
+
+/* 記事内アンカースクロール位置補正（Header 64px + 余白 8px）*/
+.article-body h2[id],
+.article-body h3[id] {
+  scroll-margin-top: 72px;
+}
+
 /* 行間クランプユーティリティ */
 .line-clamp-3 {
   display: -webkit-box;
