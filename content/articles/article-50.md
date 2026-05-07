@@ -11,6 +11,7 @@ tags: ["非エンジニア", "チームの作り方"]
 > 登場人物：真田さん（COO）/ 高橋さん（CTO）/ 白石さん（CXO）/ 黒川さん（CQO）/ 宮本さん（CSO）/ 桐島さん（CAO） ※いずれもAI、名称は架空です。
 
 <!-- summary-type: 気づき型 -->
+<!-- key-concept: 言語 -->
 <!-- cqo-approved: 2026-05-07 -->
 <aside class="summary-block">
 <p>AIを動かすのに必要な言語は、マネジメントで使ってきた言語と同じだ。</p>
