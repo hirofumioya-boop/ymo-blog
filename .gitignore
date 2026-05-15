@@ -58,3 +58,6 @@ AGENTS.md
 content/failures/
 *.code-workspace
 drafts/
+
+# Claude Code 内部設定（public リポジトリに公開しない）
+.claude/
