@@ -37,7 +37,7 @@ export default function Home() {
             letterSpacing: "0.05em",
           }}
         >
-          その悩み、たぶん誰かが先に書いています。
+          AIが気になる。でもとっかかりがわからない。
         </h1>
         <p
           style={{
@@ -48,8 +48,18 @@ export default function Home() {
             marginBottom: "8px",
           }}
         >
-          非エンジニア経営者のためのAI活用リファレンス。{allArticles.length}本の実録から、
-          あなたと同じ症状の答えを探せます。
+          やってみてわかった——これは技術の話じゃなかった。
+        </p>
+        <p
+          style={{
+            fontFamily: '"Noto Sans JP", "ヒラギノ角ゴ Pro", sans-serif',
+            fontSize: "16px",
+            color: "#6B7280",
+            lineHeight: 1.8,
+            marginBottom: "8px",
+          }}
+        >
+          経営者なら誰でも知っている、組織論の話だった。
         </p>
         <p
           style={{
@@ -60,7 +70,7 @@ export default function Home() {
             fontWeight: 500,
           }}
         >
-          読む側のための場所として、書いています。
+          非エンジニア社長が実践した、全記録。
         </p>
       </section>
 
@@ -113,17 +123,14 @@ export default function Home() {
         </p>
         <p
           style={{
-            fontFamily: '"Noto Sans JP", "ヒラギノ角ゴ Pro", sans-serif',
-            fontSize: "15px",
-            color: "#4B5563",
-            lineHeight: 2.2,
+            fontFamily: '"Noto Serif JP", "游明朝", Georgia, serif',
+            fontSize: "18px",
+            fontWeight: 700,
+            color: "#1A2332",
             marginBottom: "24px",
           }}
         >
-          AIに関する「わからない」は、たいてい既出です。
-          ChatGPTが続かない理由、業務に落とせない壁、AIに任せられる範囲。
-          このブログは、非エンジニア社長がぶつかった壁と、その越え方を記録した場所です。
-          検索して、似た症状を見つけて、明日の判断に持ち帰ってください。
+          3日前の私も、同じことを思っていました。
         </p>
         <p
           style={{
