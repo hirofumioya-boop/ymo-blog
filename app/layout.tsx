@@ -5,7 +5,7 @@ import Footer from "@/components/Footer";
 import HashScroll from "@/components/HashScroll";
 import Script from "next/script";
 
-const siteTitle = "その質問、ここで誰かが既に詰まっています。";
+const siteTitle = "その悩み、たぶん誰かが先に書いています。";
 const siteDescription = "非エンジニア経営者のためのAI活用リファレンス。ChatGPTが続かない、業務に落とせない——非エンジニア社長がぶつかった壁と越え方を記録した場所です。";
 
 export const metadata: Metadata = {

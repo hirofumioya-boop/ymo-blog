@@ -37,7 +37,7 @@ export default function Home() {
             letterSpacing: "0.05em",
           }}
         >
-          その質問、ここで誰かが既に詰まっています。
+          その悩み、たぶん誰かが先に書いています。
         </h1>
         <p
           style={{
