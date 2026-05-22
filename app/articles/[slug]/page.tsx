@@ -3,6 +3,21 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import ReadingProgress from "@/components/ReadingProgress";
 
+// A→B→C 学習導線（TASK-167 Act 2 ②b 決定事項6 / TASK-187）
+// 入口: 49→50 / A層: 42,25,26 / B層: 01,15,32 / C層: 13,34 → /ai-sansho
+const LEARNING_PATH: Record<string, { slug: string; label: string } | { href: string; label: string }> = {
+  "article-49": { slug: "article-50", label: "次の記事へ" },
+  "article-50": { slug: "article-42", label: "次の記事へ" },
+  "article-42": { slug: "article-25", label: "次の記事へ" },
+  "article-25": { slug: "article-26", label: "次の記事へ" },
+  "article-26": { slug: "article-01", label: "次の記事へ" },
+  "article-01": { slug: "article-15", label: "次の記事へ" },
+  "article-15": { slug: "article-32", label: "次の記事へ" },
+  "article-32": { slug: "article-13", label: "次の記事へ" },
+  "article-13": { slug: "article-34", label: "次の記事へ" },
+  "article-34": { href: "/ai-sansho", label: "AI経営参謀サービスを見る →" },
+};
+
 interface Props {
   params: Promise<{ slug: string }>;
 }
@@ -49,11 +64,22 @@ export default async function ArticlePage({ params }: Props) {
     notFound();
   }
 
-  // 前後の記事を取得
+  // 前後の記事を取得（公開日順ナビゲーション）
   const allArticles = getAllArticles();
   const currentIndex = allArticles.findIndex((a) => a.slug === slug);
   const prevArticle = currentIndex > 0 ? allArticles[currentIndex - 1] : null;
   const nextArticle = currentIndex < allArticles.length - 1 ? allArticles[currentIndex + 1] : null;
+
+  // A→B→C 学習導線の次のステップを取得
+  const learningNext = LEARNING_PATH[slug] ?? null;
+  // 次のスラグが記事の場合はタイトルを取得
+  let learningNextArticle: { title: string; number: number } | null = null;
+  if (learningNext && "slug" in learningNext) {
+    const found = allArticles.find((a) => a.slug === learningNext.slug);
+    if (found) {
+      learningNextArticle = { title: found.title, number: found.number };
+    }
+  }
 
   const isComingSoon = article.status === "coming-soon";
 
@@ -203,6 +229,33 @@ export default async function ArticlePage({ params }: Props) {
               )}
             </div>
           </div>
+
+          {/* A→B→C 学習導線ブロック */}
+          {learningNext && (
+            <div className="learning-path-block">
+              <p className="learning-path-label">この記事を読んだ方へ</p>
+              {"slug" in learningNext ? (
+                <Link
+                  href={`/articles/${learningNext.slug}`}
+                  className="learning-path-link"
+                >
+                  <span className="learning-path-link-label">{learningNext.label}</span>
+                  {learningNextArticle && (
+                    <span className="learning-path-link-title">
+                      No.{String(learningNextArticle.number).padStart(2, "0")} {learningNextArticle.title}
+                    </span>
+                  )}
+                </Link>
+              ) : (
+                <Link
+                  href={(learningNext as { href: string; label: string }).href}
+                  className="learning-path-link learning-path-link-service"
+                >
+                  <span className="learning-path-link-label">{learningNext.label}</span>
+                </Link>
+              )}
+            </div>
+          )}
         </div>
       </div>
 
@@ -274,6 +327,51 @@ export default async function ArticlePage({ params }: Props) {
           font-size: 14px;
           color: #1A2332;
           line-height: 1.5;
+        }
+        .learning-path-block {
+          margin-top: 32px;
+          padding: 28px 24px;
+          background-color: #FDF8F4;
+          border: 1px solid #D4A57A;
+          border-radius: 4px;
+        }
+        .learning-path-label {
+          font-family: "Noto Sans JP", "ヒラギノ角ゴ Pro", sans-serif;
+          font-size: 12px;
+          color: #9CA3AF;
+          margin-bottom: 12px;
+          letter-spacing: 0.05em;
+        }
+        .learning-path-link {
+          display: flex;
+          flex-direction: column;
+          gap: 6px;
+          text-decoration: none;
+          transition: opacity 200ms ease;
+        }
+        .learning-path-link:hover {
+          opacity: 0.75;
+        }
+        .learning-path-link-label {
+          font-family: "Noto Sans JP", "ヒラギノ角ゴ Pro", sans-serif;
+          font-size: 13px;
+          color: #C4603A;
+          font-weight: 500;
+        }
+        .learning-path-link-title {
+          font-family: "Noto Serif JP", "游明朝", Georgia, serif;
+          font-size: 15px;
+          color: #1A2332;
+          line-height: 1.55;
+        }
+        .learning-path-link-service .learning-path-link-label {
+          font-size: 15px;
+          font-weight: 600;
+        }
+        @media (max-width: 640px) {
+          .learning-path-block {
+            padding: 20px 16px;
+          }
         }
       `}</style>
     </div>
