@@ -22,6 +22,9 @@ export async function generateMetadata({ params }: Props) {
   return {
     title: article.title,
     description: article.excerpt,
+    ...(article.archived && {
+      robots: { index: false, follow: true },
+    }),
     openGraph: {
       type: 'article',
       title: article.title,

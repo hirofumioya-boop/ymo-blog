@@ -4,6 +4,7 @@ slug: "article-09"
 title: "AIに時間帯はない——深夜2時の真田さん"
 date: "2026-03-26"
 tags: ["チームの作り方"]
+archived: true
 ---
 
 > このシリーズについて：

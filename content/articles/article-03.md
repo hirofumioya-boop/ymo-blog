@@ -4,6 +4,7 @@ slug: "article-03"
 title: "AIに「EQを大切にしてほしい」と伝えたら、AIはちゃんと考えてくれた"
 date: "2026-03-25"
 tags: ["チームの作り方"]
+archived: true
 ---
 
 > このシリーズについて：

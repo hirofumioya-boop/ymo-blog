@@ -4,6 +4,7 @@ slug: "article-22"
 title: "AIとマトリックスの話で盛り上がった夜"
 date: "2026-03-30"
 tags: ["ツール"]
+archived: true
 ---
 
 > このシリーズについて：

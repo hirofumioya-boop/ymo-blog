@@ -7,7 +7,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const articles = getAllArticles();
 
   const articleEntries: MetadataRoute.Sitemap = articles
-    .filter((article) => article.status !== 'coming-soon')
+    .filter((article) => article.status !== 'coming-soon' && !article.archived)
     .map((article) => ({
       url: `${BASE_URL}/articles/${article.slug}`,
       lastModified: new Date(article.date),

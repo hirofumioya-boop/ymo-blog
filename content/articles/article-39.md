@@ -4,6 +4,7 @@ slug: "article-39"
 title: "AIと話していると、脳がオーバーヒートする話"
 date: "2026-04-14"
 tags: ["チームの作り方"]
+archived: true
 ---
 
 > このシリーズについて：

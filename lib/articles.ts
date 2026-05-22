@@ -14,6 +14,7 @@ export interface ArticleMeta {
   date: string;
   status?: string;
   tags?: string[];
+  archived?: boolean;
   readingTime: number;
   excerpt: string;
 }
@@ -67,7 +68,8 @@ function extractExcerpt(content: string): string {
   return excerpt + (excerpt.length >= 120 ? '……' : '');
 }
 
-export function getAllArticles(): ArticleMeta[] {
+export function getAllArticles(options?: { includeArchived?: boolean }): ArticleMeta[] {
+  const includeArchived = options?.includeArchived ?? false;
   const fileNames = fs.readdirSync(articlesDirectory);
 
   const articles = fileNames
@@ -84,10 +86,12 @@ export function getAllArticles(): ArticleMeta[] {
         date: data.date as string,
         status: data.status as string | undefined,
         tags: data.tags as string[] | undefined,
+        archived: data.archived as boolean | undefined,
         readingTime: calculateReadingTime(content),
         excerpt: (data.excerpt as string) || extractExcerpt(content),
       };
-    });
+    })
+    .filter(article => includeArchived || !article.archived);
 
   return articles.sort((a, b) => a.number - b.number);
 }
@@ -114,6 +118,7 @@ export async function getArticleBySlug(slug: string): Promise<Article | null> {
         date: data.date as string,
         status: data.status as string | undefined,
         tags: data.tags as string[] | undefined,
+        archived: data.archived as boolean | undefined,
         readingTime: calculateReadingTime(content),
         excerpt: (data.excerpt as string) || extractExcerpt(content),
         contentHtml,

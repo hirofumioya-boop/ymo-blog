@@ -446,6 +446,7 @@ export default function AiMindsetPage() {
           </p>
           <Link
             href="/ai-sansho"
+            aria-label="AI経営参謀の詳細ページへ"
             style={{
               fontFamily: '"Noto Sans JP", "ヒラギノ角ゴ Pro", sans-serif',
               fontSize: "14px",
