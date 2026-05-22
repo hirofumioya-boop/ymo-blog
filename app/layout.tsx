@@ -5,8 +5,8 @@ import Footer from "@/components/Footer";
 import HashScroll from "@/components/HashScroll";
 import Script from "next/script";
 
-const siteTitle = "AIが気になる。でもとっかかりがわからない。";
-const siteDescription = "AIは技術の話じゃなかった。経営者なら誰でも知っている、組織論の話だった。非エンジニア社長が実践した全記録。";
+const siteTitle = "その質問、ここで誰かが既に詰まっています。";
+const siteDescription = "非エンジニア経営者のためのAI活用リファレンス。ChatGPTが続かない、業務に落とせない——非エンジニア社長がぶつかった壁と越え方を記録した場所です。";
 
 export const metadata: Metadata = {
   title: siteTitle,
