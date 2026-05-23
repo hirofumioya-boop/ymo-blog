@@ -372,6 +372,12 @@ export default async function ArticlePage({ params }: Props) {
           .learning-path-block {
             padding: 20px 16px;
           }
+          .learning-path-link-title {
+            font-size: 16px;
+          }
+          .learning-path-link-label {
+            font-size: 14px;
+          }
         }
       `}</style>
     </div>

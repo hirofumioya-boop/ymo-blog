@@ -200,17 +200,30 @@ export default function Home() {
             全記事 — {allArticles.length} 本
           </h2>
 
-          <Link
-            href="/articles"
-            style={{
-              fontFamily: '"Noto Sans JP", "ヒラギノ角ゴ Pro", sans-serif',
-              fontSize: "14px",
-              color: "#C4603A",
-              textDecoration: "none",
-            }}
-          >
-            一覧で見る →
-          </Link>
+          <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-end", gap: "4px" }}>
+            <Link
+              href="/articles"
+              style={{
+                fontFamily: '"Noto Sans JP", "ヒラギノ角ゴ Pro", sans-serif',
+                fontSize: "14px",
+                color: "#C4603A",
+                textDecoration: "none",
+              }}
+            >
+              一覧で見る →
+            </Link>
+            <Link
+              href="/articles"
+              style={{
+                fontFamily: '"Noto Sans JP", "ヒラギノ角ゴ Pro", sans-serif',
+                fontSize: "13px",
+                color: "#9CA3AF",
+                textDecoration: "none",
+              }}
+            >
+              学習順で読む →
+            </Link>
+          </div>
         </div>
 
         <div className="article-grid">

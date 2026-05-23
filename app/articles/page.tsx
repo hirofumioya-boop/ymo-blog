@@ -1,5 +1,6 @@
 import { getAllArticles } from "@/lib/articles";
 import ArticleCard from "@/components/ArticleCard";
+import LearningPathGateway from "@/components/LearningPathGateway";
 
 export const metadata = {
   title: "全記事一覧",
@@ -45,6 +46,9 @@ export default function ArticlesPage() {
             非エンジニアがAIだけの社員チームを作ってIT会社の運営をスタートした実録シリーズ。
           </p>
         </div>
+
+        {/* 学習導線入口ブロック */}
+        <LearningPathGateway />
 
         {/* 区切り線 */}
         <div
