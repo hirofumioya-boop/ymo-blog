@@ -9,9 +9,6 @@ summary-type: "整理型"
 cqo-approved: "2026-05-23"
 ---
 
-<!-- key-concept: 根拠 -->
-<!-- summary-type: 整理型 -->
-<!-- cqo-approved: 2026-05-23 -->
 
 > このシリーズについて：
 > 非エンジニアの私が、AIだけの社員チームを作ってIT会社の運営をスタートした実録です。
