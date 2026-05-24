@@ -30,11 +30,16 @@ function calculateReadingTime(content: string): number {
   return Math.max(1, minutes);
 }
 
+function stripHtmlTags(text: string): string {
+  return text.replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim();
+}
+
 function extractExcerpt(content: string): string {
   // frontmatterを除いた本文の最初の段落を取得
   const lines = content.split('\n');
   const textLines: string[] = [];
   let inBlockquote = false;
+  let inHtmlBlock = false;
 
   for (const line of lines) {
     if (line.startsWith('---')) continue;
@@ -50,9 +55,23 @@ function extractExcerpt(content: string): string {
     if (inBlockquote) continue;
 
     const trimmed = line.trim();
+
+    // HTMLブロック（<aside> <div> <section> <p> 等の開始タグ）をスキップ
+    if (/^<[a-zA-Z][^>]*>/.test(trimmed)) {
+      inHtmlBlock = true;
+    }
+    if (inHtmlBlock) {
+      // 閉じタグで終わる行はブロック終了
+      if (/<\/[a-zA-Z]+>\s*$/.test(trimmed)) {
+        inHtmlBlock = false;
+      }
+      continue;
+    }
+
     if (trimmed && !trimmed.startsWith('|') && !trimmed.startsWith('!')) {
-      // マークダウン記法を除去
-      const cleaned = trimmed
+      // HTMLタグ除去してからマークダウン記法を除去
+      const stripped = stripHtmlTags(trimmed);
+      const cleaned = stripped
         .replace(/\*\*(.*?)\*\*/g, '$1')
         .replace(/\*(.*?)\*/g, '$1')
         .replace(/`(.*?)`/g, '$1')
