@@ -83,8 +83,33 @@ export default async function ArticlePage({ params }: Props) {
 
   const isComingSoon = article.status === "coming-soon";
 
+  // JSON-LD: BlogPosting スキーマ（TASK-116）
+  // データソース: ローカル Markdown フロントマター（gray-matter 解析済み）
+  // JSON.stringify によりエスケープ済みの信頼済みコンテンツ
+  const jsonLd = JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": article.title,
+    "datePublished": article.date,
+    "author": {
+      "@type": "Organization",
+      "name": "YMOブログ編集部"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "横濱マネジメントオフィス合同会社"
+    },
+    "url": `https://blog.y-m-o.jp/articles/${slug}`,
+    "description": article.excerpt
+  });
+
   return (
     <div style={{ backgroundColor: "#F7F5F0", minHeight: "100vh" }}>
+      {/* JSON-LD: BlogPosting スキーマ（Google リッチリザルト対応） */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: jsonLd }}
+      />
       <ReadingProgress />
       <div
         style={{

@@ -42,6 +42,12 @@ export default function RootLayout({
           href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600;700&family=Noto+Sans+JP:wght@400;500&family=DM+Serif+Display&display=swap"
           rel="stylesheet"
         />
+        {/* JSON-LD: WebSite スキーマ（TASK-116・全ページ共通）
+            静的な定数値のみで構成。外部入力なし。 */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"WebSite","name":"YMOブログ","url":"https://blog.y-m-o.jp","publisher":{"@type":"Organization","name":"横濱マネジメントオフィス合同会社"}}' }}
+        />
       </head>
       <body>
         {GA_MEASUREMENT_ID && (
