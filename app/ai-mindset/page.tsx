@@ -103,7 +103,7 @@ AIは正確な情報も不正確な情報も、同じ確信を持って話しま
     title: "AIは、人間に応えようとしすぎる",
     body: `「何かいいアイデアはない？」と聞けば、AIは何かを返してきます。曖昧な問いでも、それらしい答えを出してきます。
 
-これはAIの親切心ではなく、構造上の特性です。人間の要求に応えようとする性質が強い。だから、こちらが曖昧なまま問えば、AIはその曖昧さを「いい感じに」埋めようとします。
+これはAIの親切心ではなく、[[シコファンシー（迎合）|/glossary#sycophancy]]と呼ばれる構造上の特性です。人間の要求に応えようとする性質が強い。だから、こちらが曖昧なまま問えば、AIはその曖昧さを「いい感じに」埋めようとします。
 
 問いの質がアウトプットの質を決めます。「なんとなく相談する」より「こういう課題がある、こう考えている、どう思うか」と伝えた方が、はるかに深い答えが返ってきます。`,
   },
@@ -125,8 +125,32 @@ AIは正確な情報も不正確な情報も、同じ確信を持って話しま
   },
 ];
 
+function renderInlineLinks(text: string): React.ReactNode[] {
+  const parts = text.split(/(\[\[.+?\|.+?\]\])/g);
+  return parts.map((part, i) => {
+    const match = part.match(/^\[\[(.+?)\|(.+?)\]\]$/);
+    if (match) {
+      return (
+        <a
+          key={i}
+          href={match[2]}
+          style={{
+            color: "#C4603A",
+            textDecoration: "underline",
+            textUnderlineOffset: "2px",
+          }}
+        >
+          {match[1]}
+        </a>
+      );
+    }
+    return part;
+  });
+}
+
 function renderBody(text: string) {
-  return text.split("\n\n").map((paragraph, i) => (
+  const paragraphs = text.split("\n\n");
+  return paragraphs.map((paragraph, i) => (
     <p
       key={i}
       style={{
@@ -134,11 +158,11 @@ function renderBody(text: string) {
         fontSize: "15px",
         color: "#4B5563",
         lineHeight: 1.9,
-        marginBottom: i < text.split("\n\n").length - 1 ? "16px" : 0,
+        marginBottom: i < paragraphs.length - 1 ? "16px" : 0,
         whiteSpace: "pre-line",
       }}
     >
-      {paragraph}
+      {renderInlineLinks(paragraph)}
     </p>
   ));
 }
