@@ -1,3 +1,6 @@
+import fs from "fs";
+import path from "path";
+import matter from "gray-matter";
 import Link from "next/link";
 
 export const metadata = {
@@ -612,6 +615,126 @@ const terms = [
   },
 ];
 
+type Term = (typeof terms)[number];
+
+type ArticleUsage = {
+  number: number;
+  slug: string;
+  title: string;
+  snippet: string;
+};
+
+function escapeRegExp(value: string) {
+  return value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+}
+
+function hasGlossaryLink(content: string, termId: string) {
+  const pattern = new RegExp(`/glossary#${escapeRegExp(termId)}(?=[)"'\\s]|$)`);
+  return pattern.test(content);
+}
+
+function getTermAliases(term: Term) {
+  const candidates = [
+    term.term,
+    term.reading,
+    ...term.term.split(/[（()）/／]/),
+    ...term.reading.split(/[（()）/／]/),
+  ];
+
+  return Array.from(
+    new Set(
+      candidates
+        .map((value) => value.trim())
+        .filter((value) => value.length >= 2)
+        .filter((value) => !["のこと", "こと"].includes(value))
+    )
+  );
+}
+
+function hasTermText(content: string, term: Term) {
+  return getTermAliases(term).some((alias) => content.includes(alias));
+}
+
+function cleanSnippet(line: string) {
+  return line
+    .replace(/<[^>]+>/g, "")
+    .replace(/\*\*(.*?)\*\*/g, "$1")
+    .replace(/\*(.*?)\*/g, "$1")
+    .replace(/`(.*?)`/g, "$1")
+    .replace(/\[(.*?)\]\(.*?\)/g, "$1")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+function getUsageSnippet(content: string, term: Term) {
+  const aliases = getTermAliases(term);
+  const lines = content.split("\n");
+
+  const matchedLine =
+    lines.find((line) => hasGlossaryLink(line, term.id)) ??
+    lines.find((line) => aliases.some((alias) => line.includes(alias))) ??
+    "";
+
+  const snippet = cleanSnippet(matchedLine);
+  return snippet.length > 96 ? `${snippet.slice(0, 96)}...` : snippet;
+}
+
+function stripBoilerplate(content: string) {
+  return content
+    .split("\n")
+    .filter((line) => !line.trimStart().startsWith(">"))
+    .join("\n");
+}
+
+function getArticleUsageByTerm(termsToScan: Term[]) {
+  const articlesDirectory = path.join(process.cwd(), "content/articles");
+  const usageByTermId: Record<string, ArticleUsage[]> = {};
+
+  for (const term of termsToScan) {
+    usageByTermId[term.id] = [];
+  }
+
+  if (!fs.existsSync(articlesDirectory)) {
+    return usageByTermId;
+  }
+
+  const fileNames = fs.readdirSync(articlesDirectory).filter((name) => name.endsWith(".md"));
+
+  for (const fileName of fileNames) {
+    const filePath = path.join(articlesDirectory, fileName);
+    const fileContents = fs.readFileSync(filePath, "utf8");
+    const { data, content } = matter(fileContents);
+    const searchableContent = stripBoilerplate(content);
+
+    if (data.archived) continue;
+
+    const article = {
+      number: Number(data.number),
+      slug: String(data.slug ?? fileName.replace(/\.md$/, "")),
+      title: String(data.title ?? "無題の記事"),
+      snippet: "",
+    };
+
+    for (const term of termsToScan) {
+      if (
+        hasGlossaryLink(searchableContent, term.id) ||
+        hasTermText(searchableContent, term)
+      ) {
+        usageByTermId[term.id].push({
+          ...article,
+          snippet: getUsageSnippet(searchableContent, term),
+        });
+      }
+    }
+  }
+
+  for (const articles of Object.values(usageByTermId)) {
+    articles.sort((a, b) => a.number - b.number);
+  }
+
+  return usageByTermId;
+}
+
 const INDEX_ROWS = [
   { label: "ア", chars: "アイウエオ" },
   { label: "カ", chars: "カキクケコガギグゲゴ" },
@@ -629,6 +752,7 @@ export default function GlossaryPage() {
   const sortedTerms = [...terms].sort((a, b) =>
     a.reading.localeCompare(b.reading, "ja-JP")
   );
+  const usageByTermId = getArticleUsageByTerm(sortedTerms);
 
   const indexItems = INDEX_ROWS.flatMap((row) => {
     const first = sortedTerms.find((t) => row.chars.includes(t.reading[0]));
@@ -757,6 +881,66 @@ export default function GlossaryPage() {
               >
                 {item.description}
               </p>
+              {(usageByTermId[item.id] ?? []).length > 0 && (
+                <div
+                  style={{
+                    marginTop: "18px",
+                    padding: "14px 16px",
+                    backgroundColor: "#FFFFFF",
+                    border: "1px solid #E2DDD6",
+                    borderRadius: "8px",
+                  }}
+                >
+                  <p
+                    style={{
+                      fontFamily: '"Noto Sans JP", "ヒラギノ角ゴ Pro", sans-serif',
+                      fontSize: "12px",
+                      fontWeight: 700,
+                      color: "#1A2332",
+                      marginBottom: "8px",
+                    }}
+                  >
+                    この用語が登場する記事
+                  </p>
+                  <div
+                    style={{
+                      display: "flex",
+                      flexDirection: "column",
+                      gap: "6px",
+                    }}
+                  >
+                    {usageByTermId[item.id].map((article) => (
+                      <div key={`${item.id}-${article.slug}`}>
+                        <Link
+                          href={`/articles/${article.slug}`}
+                          style={{
+                            fontFamily: '"Noto Sans JP", "ヒラギノ角ゴ Pro", sans-serif',
+                            fontSize: "13px",
+                            color: "#C4603A",
+                            lineHeight: 1.6,
+                            textDecoration: "none",
+                          }}
+                        >
+                          No.{String(article.number).padStart(2, "0")} {article.title}
+                        </Link>
+                        {article.snippet && (
+                          <p
+                            style={{
+                              fontFamily: '"Noto Sans JP", "ヒラギノ角ゴ Pro", sans-serif',
+                              fontSize: "12px",
+                              color: "#6B7280",
+                              lineHeight: 1.6,
+                              margin: "-2px 0 4px",
+                            }}
+                          >
+                            {article.snippet}
+                          </p>
+                        )}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
               <div
                 style={{
                   borderBottom: "1px solid #E2DDD6",
@@ -784,7 +968,6 @@ export default function GlossaryPage() {
 
       {/* 動的 scroll-margin-top: sticky ヘッダーの実際の高さを CSS 変数にセット */}
       {/* dangerouslySetInnerHTML の内容は固定スクリプトのみ（外部入力なし・XSSリスクなし） */}
-      {/* eslint-disable-next-line react/no-danger */}
       <script dangerouslySetInnerHTML={{__html: `
         (function() {
           function update() {
