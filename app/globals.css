@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 @theme inline {
-  /* YMOブログカラーパレット */
+  /* Blog color palette */
   --color-deep-navy: #1A2332;
   --color-terracotta: #C4603A;
   --color-terracotta-hover: #D97754;

@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'ja_JP',
     url: 'https://blog.y-m-o.jp',
-    siteName: 'YMOブログ',
+    siteName: '横濱マネジメントオフィス ブログ',
     title: siteTitle,
     description: siteDescription,
   },
@@ -46,7 +46,7 @@ export default function RootLayout({
             静的な定数値のみで構成。外部入力なし。 */}
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"WebSite","name":"YMOブログ","url":"https://blog.y-m-o.jp","publisher":{"@type":"Organization","name":"横濱マネジメントオフィス合同会社"}}' }}
+          dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"WebSite","name":"横濱マネジメントオフィス ブログ","url":"https://blog.y-m-o.jp","publisher":{"@type":"Organization","name":"横濱マネジメントオフィス合同会社"}}' }}
         />
       </head>
       <body>

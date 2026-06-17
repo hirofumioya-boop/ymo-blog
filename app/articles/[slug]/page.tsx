@@ -46,7 +46,7 @@ export async function generateMetadata({ params }: Props) {
       description: article.excerpt,
       url: articleUrl,
       publishedTime: article.date,
-      siteName: 'YMOブログ',
+      siteName: '横濱マネジメントオフィス ブログ',
     },
     twitter: {
       card: 'summary_large_image',
@@ -93,7 +93,7 @@ export default async function ArticlePage({ params }: Props) {
     "datePublished": article.date,
     "author": {
       "@type": "Organization",
-      "name": "YMOブログ編集部"
+      "name": "ブログ編集部"
     },
     "publisher": {
       "@type": "Organization",
