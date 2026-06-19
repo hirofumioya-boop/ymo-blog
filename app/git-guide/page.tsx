@@ -44,7 +44,17 @@ const steps = [
     ],
   },
   {
-    title: "5. まず手元に用意するもの",
+    title: "5. 公開（Public）と非公開（Private）を選ぶ",
+    body: [
+      "GitHubでリポジトリ（置き場所）を作るときは、Public（公開）かPrivate（非公開）かを選びます。これは、その中身を誰が見られるかを決める設定です。",
+      "Publicは、世界中の誰でも中身を見られる状態です。オープンソースのソフトや、見せてよいサンプルに向いています。私たちのブログやサイトのように、公開を前提とするものはPublicにします。",
+      "Privateは、自分と招待した人だけが見られる状態です。仕事の資料やクライアントに関わるものなど、外に出したくないものはPrivateにします。あとからPublicとPrivateを切り替えることもできます。",
+      "なお、個人で使う分には、GitHubは基本的に無料です。無料プラン（GitHub Free）でも、PublicとPrivateのどちらのリポジトリも個数の制限なく作れます。より高度な機能やチーム向けの管理が必要になったときに、有料プランを検討すれば十分です（出典は末尾の「確認した公式情報」に記載）。",
+      "気をつけたいのは、Publicにすると過去の記録（履歴）までさかのぼって見られることです。パスワードやAPIキーをうっかりコミットしてしまうと、Publicでは外から読めてしまいます。だからこそ、機密はそもそもコミットしない、というルールが大切になります。",
+    ],
+  },
+  {
+    title: "6. まず手元に用意するもの",
     body: [
       "Gitを使うには、まずパソコンにGitをインストールします。macOSやWindows向けに公式ページから入手でき、最近はインストール済みのことも多いです。",
       "インストールしたら、最初に自分の名前とメールアドレスを一度だけ設定します。これは「誰がこの変更を記録したか」を残すためのものです。",
@@ -52,7 +62,7 @@ const steps = [
     ],
   },
   {
-    title: "6. 基本の流れをつかむ",
+    title: "7. 基本の流れをつかむ",
     body: [
       "Gitの基本は、編集する → 記録する → 送る、の3ステップです。具体的には、変更を選ぶ（add）、記録する（commit）、GitHubへ送る（push）という順番です。",
       "最初はこの3つだけ覚えれば十分です。コマンドを丸暗記する必要はなく、「いまどの段階にいるか」を意識できれば、迷いにくくなります。",
@@ -109,6 +119,8 @@ const references = [
   ["Git とは（公式ドキュメント）", "https://git-scm.com/book/ja/v2"],
   ["GitHub Docs（はじめに）", "https://docs.github.com/ja/get-started"],
   ["GitHub Hello World", "https://docs.github.com/ja/get-started/start-your-journey/hello-world"],
+  ["GitHubの料金プラン（個人向けGitHub Freeの内容）", "https://docs.github.com/ja/get-started/learning-about-github/githubs-plans"],
+  ["GitHub Pricing（料金表）", "https://github.com/pricing"],
 ];
 
 function Section({
