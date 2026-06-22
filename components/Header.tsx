@@ -15,6 +15,7 @@ const NAV_ITEMS = [
   { href: "/claude-code-guide", label: "Claude Code入門", match: (p: string) => p === "/claude-code-guide" },
   { href: "/claude-code-settings", label: "Claude Code設定", match: (p: string) => p === "/claude-code-settings" },
   { href: "/git-guide", label: "Git/GitHub入門", match: (p: string) => p === "/git-guide" },
+  { href: "/token-saving", label: "トークン節約", match: (p: string) => p === "/token-saving" },
   { href: "/glossary", label: "用語集", match: (p: string) => p === "/glossary" },
 ];
 
