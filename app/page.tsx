@@ -141,8 +141,8 @@ export default function Home() {
             fontWeight: 500,
           }}
         >
-          このサイトのデザイン・開発は、100% 私のAIチームが担当しました。
-          詳細は、<Link href="/articles/article-14" style={{ color: "#C4603A", textDecoration: "underline" }}>記事No.14</Link>と<Link href="/articles/article-16" style={{ color: "#C4603A", textDecoration: "underline" }}>記事No.16</Link>をご覧ください。
+          このサイトのデザイン・開発・執筆は、私のAIチームが行なっています。
+          詳細は、<Link href="/articles/article-14" style={{ color: "#C4603A", textDecoration: "underline" }}>記事No.14</Link>、<Link href="/articles/article-16" style={{ color: "#C4603A", textDecoration: "underline" }}>記事No.16</Link>、<Link href="/articles/article-48" style={{ color: "#C4603A", textDecoration: "underline" }}>記事No.48</Link>をご覧ください。
         </p>
       </section>
 
