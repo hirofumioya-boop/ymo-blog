@@ -313,8 +313,10 @@ export default function Header() {
           z-index: 99;
           flex-direction: column;
           max-height: calc(100vh - 64px);
+          max-height: calc(100dvh - 64px);
           overflow-y: auto;
           -webkit-overflow-scrolling: touch;
+          overscroll-behavior: contain;
           opacity: 0;
           transform: translateY(-6px);
           pointer-events: none;
