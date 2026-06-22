@@ -70,8 +70,9 @@ export default function Header() {
             minHeight: "64px",
             display: "flex",
             alignItems: "center",
-            justifyContent: "space-between",
-            gap: "24px",
+            justifyContent: "center",
+            gap: "40px",
+            flexWrap: "wrap",
           }}
         >
           <Link href="/" className="site-title-link" onClick={() => setMenuOpen(false)}>
@@ -194,10 +195,10 @@ export default function Header() {
         .desktop-nav {
           display: flex;
           flex-wrap: wrap;
-          justify-content: flex-end;
+          justify-content: center;
           gap: 8px 18px;
           align-items: center;
-          flex: 1 1 auto;
+          flex: 0 1 auto;
         }
         .nav-link {
           font-size: 12px;
