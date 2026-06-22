@@ -275,7 +275,8 @@ export default function ClaudeCodeSettingsPage() {
           }}
         >
           <Paragraph>
-            設定画面は、画面上部メニューの<strong>「Claude ＞ 設定…」</strong>、またはキーボードの<strong>「⌘ と『,』の同時押し」</strong>で開けます。
+            設定画面は、アプリのメニュー（macOSは画面上部の<strong>「Claude ＞ 設定…」</strong>）から開けます。
+            キーボードショートカットは、<strong>macOSが「⌘」+「,」</strong>、<strong>Windowsが「Ctrl」+「,」</strong>です。
             設定は左側のメニューで、大きく<strong>「設定」「デスクトップアプリ」「カスタマイズ」</strong>の3つに分かれています。
           </Paragraph>
           <Paragraph>
@@ -374,6 +375,7 @@ export default function ClaudeCodeSettingsPage() {
             このページは、2026年6月22日時点の我が社のClaude Codeアプリの設定画面（左メニューの構成と各項目）を実際に確認し、
             Anthropicの公式ドキュメントもあわせて参照して作成しています。
             項目名や構成はアップデートで変わることがあるため、細かな最新情報はアプリ内の表示もあわせて確認してください。
+            なお本ガイドはmacOS版の画面をもとにしていますが、Claude CodeのデスクトップアプリはWindowsでも使え、項目はほぼ同じです（キーボードショートカットなど一部が異なります）。
             画面に表示される個人情報やアカウント名は、このページには載せていません。
           </Paragraph>
         </Section>
