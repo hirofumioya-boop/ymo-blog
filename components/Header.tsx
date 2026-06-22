@@ -11,6 +11,7 @@ const NAV_ITEMS = [
   { href: "/articles", label: "全記事", match: (p: string) => p.startsWith("/articles") },
   { href: "/ai-mindset", label: "AIとの向き合い方", match: (p: string) => p === "/ai-mindset" },
   { href: "/codex-guide", label: "Codex入門", match: (p: string) => p === "/codex-guide" },
+  { href: "/codex-settings", label: "Codex設定", match: (p: string) => p === "/codex-settings" },
   { href: "/claude-code-guide", label: "Claude Code入門", match: (p: string) => p === "/claude-code-guide" },
   { href: "/git-guide", label: "Git/GitHub入門", match: (p: string) => p === "/git-guide" },
   { href: "/glossary", label: "用語集", match: (p: string) => p === "/glossary" },
