@@ -4,24 +4,51 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 
-const NAV_ITEMS = [
-  { href: "/about", label: "About", match: (p: string) => p === "/about" },
-  { href: "/team", label: "チーム", match: (p: string) => p === "/team" },
-  { href: "/ai-sansho", label: "AI経営参謀", match: (p: string) => p === "/ai-sansho" },
-  { href: "/articles", label: "全記事", match: (p: string) => p.startsWith("/articles") },
-  { href: "/ai-mindset", label: "AIとの向き合い方", match: (p: string) => p === "/ai-mindset" },
-  { href: "/codex-guide", label: "Codex入門", match: (p: string) => p === "/codex-guide" },
-  { href: "/codex-settings", label: "Codex設定", match: (p: string) => p === "/codex-settings" },
-  { href: "/claude-code-guide", label: "Claude Code入門", match: (p: string) => p === "/claude-code-guide" },
-  { href: "/claude-code-settings", label: "Claude Code設定", match: (p: string) => p === "/claude-code-settings" },
-  { href: "/git-guide", label: "Git/GitHub入門", match: (p: string) => p === "/git-guide" },
-  { href: "/token-saving", label: "トークン節約", match: (p: string) => p === "/token-saving" },
-  { href: "/glossary", label: "用語集", match: (p: string) => p === "/glossary" },
+type NavLeaf = { href: string; label: string };
+type NavGroup = { label: string; children: NavLeaf[] };
+type NavItem = NavLeaf | NavGroup;
+
+const NAV_ITEMS: NavItem[] = [
+  { href: "/about", label: "About" },
+  { href: "/team", label: "チーム" },
+  { href: "/ai-sansho", label: "AI経営参謀" },
+  { href: "/articles", label: "全記事" },
+  { href: "/ai-mindset", label: "AIとの向き合い方" },
+  {
+    label: "Codex",
+    children: [
+      { href: "/codex-guide", label: "Codex入門" },
+      { href: "/codex-settings", label: "Codex設定" },
+    ],
+  },
+  {
+    label: "Claude Code",
+    children: [
+      { href: "/claude-code-guide", label: "Claude Code入門" },
+      { href: "/claude-code-settings", label: "Claude Code設定" },
+    ],
+  },
+  {
+    label: "学ぶ",
+    children: [
+      { href: "/git-guide", label: "Git/GitHub入門" },
+      { href: "/token-saving", label: "トークン節約" },
+      { href: "/glossary", label: "用語集" },
+    ],
+  },
 ];
+
+function isGroup(item: NavItem): item is NavGroup {
+  return (item as NavGroup).children !== undefined;
+}
 
 export default function Header() {
   const pathname = usePathname();
   const [menuOpen, setMenuOpen] = useState(false);
+  const [openGroup, setOpenGroup] = useState<string | null>(null);
+
+  const isLeafActive = (href: string) =>
+    href === "/articles" ? pathname.startsWith("/articles") : pathname === href;
 
   return (
     <>
@@ -54,15 +81,52 @@ export default function Header() {
 
           {/* デスクトップナビ */}
           <nav className="desktop-nav">
-            {NAV_ITEMS.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                className={`nav-link ${item.match(pathname) ? "active" : ""}`}
-              >
-                {item.label}
-              </Link>
-            ))}
+            {NAV_ITEMS.map((item) =>
+              isGroup(item) ? (
+                <div
+                  key={item.label}
+                  className="nav-group"
+                  onMouseEnter={() => setOpenGroup(item.label)}
+                  onMouseLeave={() => setOpenGroup(null)}
+                >
+                  <button
+                    type="button"
+                    className={`nav-link nav-group-btn ${
+                      item.children.some((c) => isLeafActive(c.href)) ? "active" : ""
+                    }`}
+                    onClick={() =>
+                      setOpenGroup(openGroup === item.label ? null : item.label)
+                    }
+                    aria-expanded={openGroup === item.label}
+                  >
+                    {item.label}
+                    <span className="nav-caret" aria-hidden="true">
+                      ▾
+                    </span>
+                  </button>
+                  <div className={`nav-dropdown ${openGroup === item.label ? "open" : ""}`}>
+                    {item.children.map((c) => (
+                      <Link
+                        key={c.href}
+                        href={c.href}
+                        className={`nav-dropdown-link ${isLeafActive(c.href) ? "active" : ""}`}
+                        onClick={() => setOpenGroup(null)}
+                      >
+                        {c.label}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              ) : (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className={`nav-link ${isLeafActive(item.href) ? "active" : ""}`}
+                >
+                  {item.label}
+                </Link>
+              )
+            )}
           </nav>
 
           {/* ハンバーガーボタン（モバイルのみ表示） */}
@@ -81,16 +145,32 @@ export default function Header() {
 
       {/* モバイルドロップダウンメニュー */}
       <div className={`mobile-menu${menuOpen ? " open" : ""}`}>
-        {NAV_ITEMS.map((item) => (
-          <Link
-            key={item.href}
-            href={item.href}
-            className={`mobile-nav-link ${item.match(pathname) ? "active" : ""}`}
-            onClick={() => setMenuOpen(false)}
-          >
-            {item.label}
-          </Link>
-        ))}
+        {NAV_ITEMS.map((item) =>
+          isGroup(item) ? (
+            <div key={item.label}>
+              <div className="mobile-group-label">{item.label}</div>
+              {item.children.map((c) => (
+                <Link
+                  key={c.href}
+                  href={c.href}
+                  className={`mobile-nav-link mobile-sub ${isLeafActive(c.href) ? "active" : ""}`}
+                  onClick={() => setMenuOpen(false)}
+                >
+                  {c.label}
+                </Link>
+              ))}
+            </div>
+          ) : (
+            <Link
+              key={item.href}
+              href={item.href}
+              className={`mobile-nav-link ${isLeafActive(item.href) ? "active" : ""}`}
+              onClick={() => setMenuOpen(false)}
+            >
+              {item.label}
+            </Link>
+          )
+        )}
       </div>
 
       <style>{`
@@ -138,6 +218,61 @@ export default function Header() {
           color: #C4603A;
           font-weight: 600;
           border-bottom-color: #C4603A;
+        }
+        /* ドロップダウン */
+        .nav-group {
+          position: relative;
+          display: inline-flex;
+          align-items: center;
+        }
+        .nav-group-btn {
+          background: none;
+          border: none;
+          border-bottom: 1px solid #D6D0C8;
+          cursor: pointer;
+          display: inline-flex;
+          align-items: center;
+          gap: 3px;
+          font-family: "Noto Sans JP", "ヒラギノ角ゴ Pro", sans-serif;
+          padding: 0 0 4px 0;
+        }
+        .nav-caret {
+          font-size: 9px;
+          line-height: 1;
+        }
+        .nav-dropdown {
+          position: absolute;
+          top: 100%;
+          left: 0;
+          min-width: 168px;
+          background: #FFFFFF;
+          border: 1px solid #E2DDD6;
+          border-radius: 6px;
+          box-shadow: 0 6px 20px rgba(26, 35, 50, 0.10);
+          padding: 6px 0;
+          display: none;
+          flex-direction: column;
+          z-index: 101;
+        }
+        .nav-dropdown.open {
+          display: flex;
+        }
+        .nav-dropdown-link {
+          display: block;
+          padding: 9px 16px;
+          font-size: 13px;
+          color: #1A2332;
+          text-decoration: none;
+          white-space: nowrap;
+          font-family: "Noto Sans JP", "ヒラギノ角ゴ Pro", sans-serif;
+        }
+        .nav-dropdown-link:hover {
+          background: #FAF6F1;
+          color: #C4603A;
+        }
+        .nav-dropdown-link.active {
+          color: #C4603A;
+          font-weight: 600;
         }
         /* ハンバーガーボタン */
         .hamburger-btn {
@@ -206,7 +341,23 @@ export default function Header() {
           background-color: #FAF9F7;
           color: #1A2332;
         }
-        @media (max-width: 720px) {
+        .mobile-group-label {
+          padding: 14px 24px 4px;
+          font-size: 12px;
+          font-weight: 700;
+          color: #C4603A;
+          border-top: 1px solid #F0EDE8;
+          font-family: "Noto Sans JP", sans-serif;
+          letter-spacing: 0.04em;
+        }
+        .mobile-sub {
+          padding-top: 10px;
+          padding-bottom: 10px;
+          padding-left: 40px;
+          border-top: none;
+          font-size: 14px;
+        }
+        @media (max-width: 820px) {
           .title-full {
             display: none;
           }
