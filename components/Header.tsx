@@ -308,15 +308,14 @@ export default function Header() {
           top: 64px;
           left: 0;
           right: 0;
+          bottom: 0;
           background-color: #FFFFFF;
-          border-bottom: 1px solid #E2DDD6;
           z-index: 99;
           flex-direction: column;
-          max-height: calc(100vh - 64px);
-          max-height: calc(100dvh - 64px);
           overflow-y: auto;
           -webkit-overflow-scrolling: touch;
           overscroll-behavior: contain;
+          padding-bottom: 24px;
           opacity: 0;
           transform: translateY(-6px);
           pointer-events: none;
