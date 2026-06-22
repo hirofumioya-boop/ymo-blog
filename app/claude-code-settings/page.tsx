@@ -302,6 +302,32 @@ export default function ClaudeCodeSettingsPage() {
           <Paragraph>セッションの仕分けや、安全フラグが立ったときのふるまいを決めます。</Paragraph>
           <ItemList items={claudeCodeGeneralItems} />
 
+          <div
+            style={{
+              backgroundColor: "#FBF3EF",
+              border: "1px solid #E6CFC4",
+              borderRadius: "4px",
+              padding: "16px 20px",
+              marginTop: "20px",
+            }}
+          >
+            <p
+              style={{
+                fontFamily: '"Noto Sans JP", "ヒラギノ角ゴ Pro", sans-serif',
+                fontSize: "14px",
+                color: "#6B4A3A",
+                lineHeight: 1.9,
+                margin: 0,
+              }}
+            >
+              <strong style={{ color: "#C4603A" }}>※ 作業中に追加で指示したいとき</strong><br />
+              Claude Codeには、Codexにある「フォローアップの動作（キュー／ステア）」のような切り替え設定はありません。
+              作業の途中で指示を足したいときは、文章を打って <strong>Enter</strong> を押すと、次の区切り（実行中の処理が一段落したタイミング）で受け取られます。
+              そのため、打ってもしばらく反応しないように見えることがあります。
+              すぐ止めたいときは <strong>Esc（または停止ボタン）</strong> で中断してから、あらためて指示するのが確実です。
+            </p>
+          </div>
+
           <h3 style={{ fontFamily: '"Noto Sans JP", sans-serif', fontSize: "17px", fontWeight: 600, color: "#1A2332", margin: "28px 0 8px" }}>コードの表示設定</h3>
           <Paragraph>コードや差分（変更箇所）の見え方を整えます。最初は既定のままで問題ありません。</Paragraph>
           <ItemList items={claudeCodeDisplayItems} />
