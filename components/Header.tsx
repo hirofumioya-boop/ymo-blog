@@ -27,7 +27,7 @@ export default function Header() {
     <>
       <header
         style={{
-          height: "64px",
+          minHeight: "64px",
           backgroundColor: "#FFFFFF",
           borderBottom: "1px solid #E2DDD6",
           position: "sticky",
@@ -39,11 +39,12 @@ export default function Header() {
           style={{
             maxWidth: "1100px",
             margin: "0 auto",
-            padding: "0 24px",
-            height: "100%",
+            padding: "10px 24px",
+            minHeight: "64px",
             display: "flex",
             alignItems: "center",
             justifyContent: "space-between",
+            gap: "24px",
           }}
         >
           <Link href="/" className="site-title-link" onClick={() => setMenuOpen(false)}>
@@ -112,8 +113,11 @@ export default function Header() {
         /* デスクトップナビ */
         .desktop-nav {
           display: flex;
-          gap: 24px;
+          flex-wrap: wrap;
+          justify-content: flex-end;
+          gap: 8px 18px;
           align-items: center;
+          flex: 1 1 auto;
         }
         .nav-link {
           font-size: 12px;
@@ -172,6 +176,9 @@ export default function Header() {
           border-bottom: 1px solid #E2DDD6;
           z-index: 99;
           flex-direction: column;
+          max-height: calc(100vh - 64px);
+          overflow-y: auto;
+          -webkit-overflow-scrolling: touch;
           opacity: 0;
           transform: translateY(-6px);
           pointer-events: none;
