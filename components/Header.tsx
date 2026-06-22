@@ -92,9 +92,7 @@ export default function Header() {
                 >
                   <button
                     type="button"
-                    className={`nav-link nav-group-btn ${
-                      item.children.some((c) => isLeafActive(c.href)) ? "active" : ""
-                    }`}
+                    className="nav-link nav-group-btn"
                     onClick={() =>
                       setOpenGroup(openGroup === item.label ? null : item.label)
                     }
@@ -272,7 +270,8 @@ export default function Header() {
           color: #C4603A;
         }
         .nav-dropdown-link.active {
-          color: #C4603A;
+          background: #FAF6F1;
+          color: #1A2332;
           font-weight: 600;
         }
         /* ハンバーガーボタン */
