@@ -13,6 +13,7 @@ const NAV_ITEMS = [
   { href: "/codex-guide", label: "Codex入門", match: (p: string) => p === "/codex-guide" },
   { href: "/codex-settings", label: "Codex設定", match: (p: string) => p === "/codex-settings" },
   { href: "/claude-code-guide", label: "Claude Code入門", match: (p: string) => p === "/claude-code-guide" },
+  { href: "/claude-code-settings", label: "Claude Code設定", match: (p: string) => p === "/claude-code-settings" },
   { href: "/git-guide", label: "Git/GitHub入門", match: (p: string) => p === "/git-guide" },
   { href: "/glossary", label: "用語集", match: (p: string) => p === "/glossary" },
 ];

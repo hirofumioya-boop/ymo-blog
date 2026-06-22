@@ -70,6 +70,12 @@ const staticRoutes: MetadataRoute.Sitemap = [
     changeFrequency: 'monthly',
     priority: 0.7,
   },
+  {
+    url: `${BASE_URL}/claude-code-settings`,
+    lastModified: new Date(),
+    changeFrequency: 'monthly',
+    priority: 0.7,
+  },
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
