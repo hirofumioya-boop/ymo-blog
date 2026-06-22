@@ -46,8 +46,8 @@ export default function Header() {
           }}
         >
           <Link href="/" className="site-title-link" onClick={() => setMenuOpen(false)}>
-            <span className="title-full">非エンジニア社長がAI社員だけの会社を作ってみた</span>
-            <span className="title-short">AI社員だけの会社</span>
+            <span className="title-full">トップ</span>
+            <span className="title-short">トップ</span>
           </Link>
 
           {/* デスクトップナビ */}
