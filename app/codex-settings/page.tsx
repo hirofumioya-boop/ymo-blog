@@ -29,6 +29,40 @@ const generalItems: Item[] = [
     "権限 ＞ フルアクセス",
     "あなたの承認なしに、コンピュータ上のあらゆるファイル編集やネットワークコマンド実行を許可する設定です。データ損失・漏えいのリスクが大幅に高まるため、初心者は基本オフのままにします。",
   ],
+  [
+    "レビューの起動方法（インライン／独立）",
+    "コードレビュー（/review）を、いまのチャットの中で行う（インライン）か、別のレビュー専用チャットを立ち上げて行う（独立）かを選びます。",
+  ],
+  [
+    "他の AI アプリから設定をインポート",
+    "他のAIツールから、設定・プロジェクト・最近のチャットを引き継ぐ機能です。乗り換えや併用をはじめるときに便利です。",
+  ],
+  [
+    "オープンソースライセンス",
+    "Codexに含まれるオープンソース部品（依存関係）の権利表記を確認できます。通常は見るだけの項目です。",
+  ],
+];
+
+const composerItems: Item[] = [
+  [
+    "コンテキストウィンドウの使用量を表示",
+    "いまの会話が、コンテキスト（AIが一度に覚えていられる量）をどれくらい使っているかを画面に表示します。残量の目安になり、長い会話で話が抜け始める前に気づけます。",
+  ],
+  [
+    "フォローアップの動作（キュー／ステア）",
+    "Codexが作業している最中に追加で送った指示を、「キュー（順番待ちに足す）」か「ステア（進行中の動きに割り込んで操作）」のどちらにするか選びます。⇧⌘⏎（Shift＋⌘＋Enter／WindowsはShift＋Ctrl＋Enter）を押すと、その1回だけ逆の動作になります。",
+  ],
+  [
+    "長いプロンプトの送信に ⌘＋Enter を必須にする",
+    "オンにすると、複数行の長い入力は ⌘＋Enter（WindowsはCtrl＋Enter）でだけ送信されます。書きかけで誤って送ってしまうのを防げます。",
+  ],
+];
+
+const popoutItems: Item[] = [
+  [
+    "ポップアウトウィンドウのホットキー",
+    "Codexを小さな別ウィンドウとして、どのアプリからでも呼び出せるグローバルショートカットを設定します。未設定ならオフのままです。",
+  ],
 ];
 
 const profileItems: Item[] = [
@@ -299,6 +333,13 @@ export default function CodexSettingsPage() {
           <h3 style={{ fontFamily: '"Noto Sans JP", sans-serif', fontSize: "17px", fontWeight: 600, color: "#1A2332", margin: "28px 0 8px" }}>一般</h3>
           <Paragraph>作業モードと、Codexがどこまでファイルを触れるかという権限の入口です。安全の要になります。</Paragraph>
           <ItemList items={generalItems} />
+
+          <h3 style={{ fontFamily: '"Noto Sans JP", sans-serif', fontSize: "17px", fontWeight: 600, color: "#1A2332", margin: "28px 0 8px" }}>コンポーザー</h3>
+          <Paragraph>入力欄（コンポーザー）まわりの動きを整えます。送信のしかたや、作業中の追加指示の扱いを好みに合わせられます。</Paragraph>
+          <ItemList items={composerItems} />
+
+          <h3 style={{ fontFamily: '"Noto Sans JP", sans-serif', fontSize: "17px", fontWeight: 600, color: "#1A2332", margin: "28px 0 8px" }}>ポップアウトウィンドウ</h3>
+          <ItemList items={popoutItems} />
 
           <h3 style={{ fontFamily: '"Noto Sans JP", sans-serif', fontSize: "17px", fontWeight: 600, color: "#1A2332", margin: "28px 0 8px" }}>プロフィール</h3>
           <Paragraph>自分のアカウント表示と、使い方を振り返るためのダッシュボードです。</Paragraph>
