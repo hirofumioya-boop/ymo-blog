@@ -298,12 +298,77 @@ export default function TokenSavingPage() {
         >
           <Paragraph>
             「トークン」はAIが文章を処理するときの最小の単位で、<strong>使った量がそのまま料金・使用量になります</strong>。
+            目安として、<strong>英語ならおよそ1単語、日本語ならおよそ1〜2文字で1トークン</strong>です。
             節約のコツは難しくありません。まずは<strong>「会話を身軽に保つ」</strong>こと。これだけで多くが解決します。
           </Paragraph>
           <Paragraph>
             ここでは Claude Code と Codex の<strong>共通の考え方</strong>を中心に説明し、操作名が違うところは
             <strong>ツール別の早見表</strong>で並べて示します。全部を覚える必要はなく、初級の3つから始めれば十分です。
           </Paragraph>
+        </div>
+
+        <div
+          style={{
+            backgroundColor: "#FBF3EF",
+            border: "1px solid #E6CFC4",
+            borderRadius: "4px",
+            padding: "20px 24px",
+            marginBottom: "48px",
+          }}
+        >
+          <p
+            style={{
+              fontFamily: '"Noto Sans JP", "ヒラギノ角ゴ Pro", sans-serif',
+              fontSize: "15px",
+              fontWeight: 600,
+              color: "#C4603A",
+              lineHeight: 1.8,
+              margin: "0 0 12px",
+            }}
+          >
+            例：A4資料1枚は、だいたい何トークン？
+          </p>
+          <p
+            style={{
+              fontFamily: '"Noto Sans JP", "ヒラギノ角ゴ Pro", sans-serif',
+              fontSize: "14px",
+              color: "#6B4A3A",
+              lineHeight: 1.9,
+              margin: "0 0 12px",
+            }}
+          >
+            日本語の文章なら、A4 1枚はおよそ <strong>1,000〜1,500文字 ≒ 1,000トークン前後</strong>が目安です。
+            読む・書くで、かかり方が変わります。
+          </p>
+          <ul
+            style={{
+              fontFamily: '"Noto Sans JP", "ヒラギノ角ゴ Pro", sans-serif',
+              fontSize: "14px",
+              color: "#6B4A3A",
+              lineHeight: 1.9,
+              paddingLeft: "1.3em",
+              margin: "0 0 12px",
+            }}
+          >
+            <li>
+              <strong>読ませる（入力）</strong>：約1,000トークン
+            </li>
+            <li>
+              <strong>書かせる（出力）</strong>：約1,000トークン＋ 出力は単価が高い（モデルによっては数倍、およそ5倍のことも）
+            </li>
+          </ul>
+          <p
+            style={{
+              fontFamily: '"Noto Sans JP", "ヒラギノ角ゴ Pro", sans-serif',
+              fontSize: "14px",
+              color: "#6B4A3A",
+              lineHeight: 1.9,
+              margin: 0,
+            }}
+          >
+            つまり同じ1枚でも <strong>「書かせる」ほうが割高</strong>。だから「結論だけ・差分だけ」と頼むのが効きます。
+            （文字数やモデルでぶれるので、あくまで“ざっくりの感覚”としてご活用ください）
+          </p>
         </div>
 
         <Section eyebrow="Why" title="まず仕組み（なぜ節約が効くのか）">
