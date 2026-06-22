@@ -93,7 +93,7 @@ export default function Header() {
 
       <style>{`
         .site-title-link {
-          font-family: "Noto Serif JP", "游明朝", Georgia, serif;
+          font-family: "Noto Sans JP", "ヒラギノ角ゴ Pro", sans-serif;
           font-size: 14px;
           font-weight: 700;
           color: #1A2332;
