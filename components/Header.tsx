@@ -100,8 +100,8 @@ export default function Header() {
           color: #1A2332;
           text-decoration: none;
           letter-spacing: 0.03em;
-          flex-shrink: 1;
-          min-width: 0;
+          flex-shrink: 0;
+          white-space: nowrap;
         }
         .site-title-link:hover {
           color: #C4603A;
