@@ -69,17 +69,6 @@ const steps = [
   },
 ];
 
-const settings = [
-  ["CLAUDE.md", "プロジェクトの作業ルールや記憶を書いておくファイルです。最初に育てるべき中心です。"],
-  ["~/.claude/settings.json", "自分の環境全体に効く設定です。個人の基本設定を置きます。"],
-  [".claude/settings.json", "プロジェクトで共有する設定です。チームで同じルールを使う時に向いています。"],
-  [".claude/settings.local.json", "自分のPCだけで使う設定です。通常はGitに入れず、個人用の調整に使います。"],
-  ["Permissions", "許可、確認、拒否のルールです。削除や外部送信、危険なコマンドは慎重に扱います。"],
-  ["MCP", "外部サービスや社内ツールをClaude Codeにつなぐ仕組みです。必要になってからで十分です。"],
-  ["Hooks", "Claude Codeの操作前後にコマンドを走らせる仕組みです。自動整形や検証に使えます。"],
-  ["Skills / Plugins", "繰り返し作業をパッケージ化する仕組みです。慣れてから整備すると効果が大きいです。"],
-];
-
 const commands = [
   ["/help", "使えるコマンドを確認します。迷ったら最初に見ます。"],
   ["/init", "プロジェクト用のCLAUDE.mdを作るきっかけに使います。"],
@@ -289,30 +278,21 @@ export default function ClaudeCodeGuidePage() {
         </Section>
 
         <Section eyebrow="Settings" title="最初に見る設定">
-          <div style={{ display: "grid", gap: "14px" }}>
-            {settings.map(([name, description]) => (
-              <div
-                key={name}
-                style={{
-                  borderTop: "1px solid #E2DDD6",
-                  paddingTop: "14px",
-                }}
-              >
-                <h3
-                  style={{
-                    fontFamily: '"Noto Sans JP", "ヒラギノ角ゴ Pro", sans-serif',
-                    fontSize: "16px",
-                    fontWeight: 600,
-                    color: "#1A2332",
-                    marginBottom: "4px",
-                  }}
-                >
-                  {name}
-                </h3>
-                <Paragraph>{description}</Paragraph>
-              </div>
-            ))}
-          </div>
+          <Paragraph>
+            Claude Codeの設定は、主に指示ファイル「CLAUDE.md」（作業ルールや記憶）と、設定ファイル「settings.json」（ユーザー全体・プロジェクト共有・個人用の3階層）で管理します。
+            チームで共有するルールはプロジェクト設定へ、個人の好みは個人用設定へ、と分けると整理しやすくなります。
+          </Paragraph>
+          <Paragraph>
+            まずは<strong>権限（許可・確認・拒否）</strong>、<strong>モデル</strong>、<strong>MCP</strong>、<strong>CLAUDE.mdの場所</strong>だけ押さえれば十分です。
+            「.env」や「secrets」などはdeny設定で読ませない、といった安全策も有効です。
+          </Paragraph>
+          <Paragraph>
+            アプリの設定画面の各項目を一つずつやさしく解説したページも用意しています。詳しくは
+            <Link href="/claude-code-settings" style={{ color: "#C4603A", textDecoration: "underline" }}>
+              Claude Code設定ガイド
+            </Link>
+            をご覧ください。
+          </Paragraph>
         </Section>
 
         <Section eyebrow="Commands" title="よく使うコマンド">

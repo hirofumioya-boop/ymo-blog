@@ -69,17 +69,6 @@ const steps = [
   },
 ];
 
-const settings = [
-  ["General", "ファイルの開き方、ターミナル表示、通知など、普段の使い心地を整える場所です。"],
-  ["Keyboard Shortcuts", "ショートカットを確認・変更できます。慣れてきたら作業が速くなります。"],
-  ["Agent configuration", "承認、サンドボックス、モデルなど、Codexの動き方に関わる大事な設定です。"],
-  ["Git", "ブランチ名、コミットメッセージ、プルリクエスト文など、Git作業の設定です。"],
-  ["Browser", "ローカルページ確認やブラウザ操作に関わる設定です。外部サイトを扱う時は慎重に使います。"],
-  ["MCP", "Google Driveやカレンダーなど、外部ツールとつなぐための設定です。必要になってからで十分です。"],
-  ["Personalization", "Codexの話し方やカスタム指示を調整できます。"],
-  ["Memories", "過去のやり取りを今後の作業に活かす機能です。機密情報の扱いには注意します。"],
-];
-
 const commands = [
   ["/status", "現在のスレッド、コンテキスト使用量、制限などを確認します。"],
   ["/plan", "いきなり作業せず、先に計画を立ててもらう時に使います。"],
@@ -283,30 +272,17 @@ export default function CodexGuidePage() {
         </Section>
 
         <Section eyebrow="Settings" title="アプリ設定で最初に見る場所">
-          <div style={{ display: "grid", gap: "14px" }}>
-            {settings.map(([name, description]) => (
-              <div
-                key={name}
-                style={{
-                  borderTop: "1px solid #E2DDD6",
-                  paddingTop: "14px",
-                }}
-              >
-                <h3
-                  style={{
-                    fontFamily: '"Noto Sans JP", "ヒラギノ角ゴ Pro", sans-serif',
-                    fontSize: "16px",
-                    fontWeight: 600,
-                    color: "#1A2332",
-                    marginBottom: "4px",
-                  }}
-                >
-                  {name}
-                </h3>
-                <Paragraph>{description}</Paragraph>
-              </div>
-            ))}
-          </div>
+          <Paragraph>
+            設定画面では、見た目・キーボードショートカット・承認やサンドボックス（Agent configuration）・Git・ブラウザ・MCPなどを調整できます。
+            最初から全部を理解する必要はありません。まずは<strong>承認とサンドボックス</strong>、そして<strong>ブラウザ／コンピューターの使用</strong>など、安全に関わる場所だけ押さえれば十分です。
+          </Paragraph>
+          <Paragraph>
+            各項目を一つずつやさしく解説したページを用意しています。詳しくは
+            <Link href="/codex-settings" style={{ color: "#C4603A", textDecoration: "underline" }}>
+              Codex設定ガイド
+            </Link>
+            をご覧ください。
+          </Paragraph>
         </Section>
 
         <Section eyebrow="Commands" title="よく使うコマンド">
