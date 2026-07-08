@@ -443,7 +443,8 @@ export default function TokenSavingPage() {
                 margin: 0,
               }}
             >
-              我が社のMacでは、2026年7月8日時点で <span style={codeStyle}>rtk gain</span> が
+              我が社のMacでは、RTKを導入した2026年7月4日午前から、初回確認した7月8日夕方までの約4日間で、
+              <span style={codeStyle}>rtk gain</span> が
               <strong>累計約540万トークン削減、削減率80.6%</strong> と表示しました。
               特に効果が大きかったのは、プロセス一覧、検索、差分確認、ファイル読み込みのような
               「出力が長くなりがちな操作」です。
