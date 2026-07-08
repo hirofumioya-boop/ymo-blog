@@ -4,7 +4,7 @@ import type { ReactNode } from "react";
 export const metadata = {
   title: "トークン節約のコツ",
   description:
-    "AI初心者向けに、Claude Code・Codex共通で効く「トークン節約」のコツを、仕組み（なぜ効くのか）から初級・中級・上級まで、やさしく解説したページです。コストを抑え、速く、精度を保つための実践ガイド。",
+    "AI初心者向けに、Claude Code・Codex共通で効く「トークン節約」のコツを、仕組み（なぜ効くのか）から初級・中級・上級、RTKによるコマンド出力圧縮まで、やさしく解説したページです。",
   openGraph: {
     url: "https://blog.y-m-o.jp/token-saving",
   },
@@ -399,6 +399,68 @@ export default function TokenSavingPage() {
           <ItemList items={advancedItems} />
         </Section>
 
+        <Section eyebrow="RTK" title="RTKで、コマンド出力そのものを軽くする">
+          <Paragraph>
+            Claude Code や Codex で開発作業をしていると、<span style={codeStyle}>grep</span>、<span style={codeStyle}>diff</span>、
+            <span style={codeStyle}>ps</span>、ファイル読み込みなどの結果が、そのままAIに渡ります。
+            便利な一方で、ログや一覧が長すぎると、そこで大量のトークンを使ってしまいます。
+          </Paragraph>
+          <Paragraph>
+            <Link href="/glossary#rtk" style={{ color: "#C4603A", textDecoration: "underline" }}>
+              RTK
+            </Link>
+            （Rust Token Killer）は、この<strong>コマンド出力のムダを削るためのローカルツール</strong>です。
+            コマンドの実行結果をAIに返す前に、空行・重複・長すぎる一覧・ノイズの多い行を圧縮し、
+            AIが読むべき部分だけを短く届けます。
+          </Paragraph>
+          <div
+            style={{
+              backgroundColor: "#FFFFFF",
+              border: "1px solid #E2DDD6",
+              borderRadius: "4px",
+              padding: "20px 24px",
+              margin: "24px 0",
+            }}
+          >
+            <p
+              style={{
+                fontFamily: '"Noto Sans JP", "ヒラギノ角ゴ Pro", sans-serif',
+                fontSize: "15px",
+                fontWeight: 600,
+                color: "#1A2332",
+                lineHeight: 1.8,
+                margin: "0 0 10px",
+              }}
+            >
+              実際に数日使ってみた結果
+            </p>
+            <p
+              style={{
+                fontFamily: '"Noto Sans JP", "ヒラギノ角ゴ Pro", sans-serif',
+                fontSize: "14px",
+                color: "#4B5563",
+                lineHeight: 1.9,
+                margin: 0,
+              }}
+            >
+              我が社のMacでは、2026年7月8日時点で <span style={codeStyle}>rtk gain</span> が
+              <strong>累計約540万トークン削減、削減率80.6%</strong> と表示しました。
+              特に効果が大きかったのは、プロセス一覧、検索、差分確認、ファイル読み込みのような
+              「出力が長くなりがちな操作」です。
+            </p>
+          </div>
+          <Paragraph>
+            ただし、RTKは万能ではありません。AIの思考そのものや、長すぎる指示ファイル、
+            会話履歴の膨らみを直接減らすものではありません。あくまで
+            <strong>ターミナルからAIに返る情報量を絞る道具</strong>です。
+            そのため、このページで紹介した「会話を区切る」「読む範囲を絞る」「指示ファイルを短く保つ」と組み合わせて使うと、効果が出やすくなります。
+          </Paragraph>
+          <Paragraph>
+            逆に、どうしても生の出力を確認したい場面では、圧縮されていない結果に戻して確認します。
+            節約は大事ですが、最後は「短いこと」より「正しく確認できること」を優先します。
+          </Paragraph>
+        </Section>
+
         <Section eyebrow="Start" title="まずやる3つ">
           <ul
             style={{
@@ -434,7 +496,7 @@ export default function TokenSavingPage() {
 
         <Section eyebrow="Note" title="このページについて">
           <Paragraph>
-            このページは、2026年6月22日時点の情報をもとに、Anthropic（Claude Code）・OpenAI（Codex）の公式ドキュメントと、
+            このページは、2026年7月8日時点の情報をもとに、Anthropic（Claude Code）・OpenAI（Codex）の公式ドキュメントと、
             一般的に知られている運用上のコツを参照して作成しています。
             コマンド名や設定はアップデートで変わることがあるため、細かな最新情報は各アプリ内の表示や公式情報もあわせて確認してください。
           </Paragraph>

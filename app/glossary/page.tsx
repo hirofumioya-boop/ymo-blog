@@ -13,6 +13,13 @@ export const metadata = {
 
 const terms = [
   {
+    id: "rtk",
+    term: "RTK（Rust Token Killer）",
+    reading: "アールティーケー（Rust Token Killer）",
+    description:
+      "Claude CodeやCodexでコマンドを実行したとき、AIに返す出力を短く圧縮するためのローカルツール。検索結果、差分、プロセス一覧、ファイル読み込みのように長くなりがちな出力から、空行・重複・ノイズを減らし、AIが読む量を抑える。AIの考える量や長い会話履歴そのものを減らす道具ではないが、開発作業でターミナル出力が多い場合には、体感できるほどトークン消費を減らせることがある。",
+  },
+  {
     id: "agent",
     term: "Agent（エージェント）",
     reading: "エージェント",
