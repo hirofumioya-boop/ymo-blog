@@ -11,7 +11,7 @@ type NavItem = NavLeaf | NavGroup;
 const NAV_ITEMS: NavItem[] = [
   { href: "/about", label: "About" },
   { href: "/team", label: "チーム" },
-  { href: "/ai-sansho", label: "AI経営参謀" },
+  { href: "/ai-sanbo", label: "AI経営参謀" },
   { href: "/articles", label: "全記事" },
   { href: "/ai-mindset", label: "AIとの向き合い方" },
   {

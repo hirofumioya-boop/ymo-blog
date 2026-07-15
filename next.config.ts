@@ -50,6 +50,16 @@ const nextConfig: NextConfig = {
       },
     ];
   },
+  async redirects() {
+    return [
+      {
+        // 旧スラッグ（ローマ字誤り: 参謀=sanbo）→新スラッグへ恒久リダイレクト
+        source: "/ai-sansho",
+        destination: "/ai-sanbo",
+        permanent: true,
+      },
+    ];
+  },
 };
 
 export default nextConfig;

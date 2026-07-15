@@ -5,11 +5,11 @@ export const metadata = {
   description:
     "経営者の孤独を、専属参謀で変える。非エンジニアの経営者が、AIと一緒に意思決定を加速させるサービスです。",
   openGraph: {
-    url: 'https://blog.y-m-o.jp/ai-sansho',
+    url: 'https://blog.y-m-o.jp/ai-sanbo',
   },
 };
 
-export default function AiSanshoPage() {
+export default function AiSanboPage() {
   return (
     <div style={{ backgroundColor: "#F7F5F0", minHeight: "100vh" }}>
       <div

@@ -23,7 +23,7 @@ const staticRoutes: MetadataRoute.Sitemap = [
     priority: 0.9,
   },
   {
-    url: `${BASE_URL}/ai-sansho`,
+    url: `${BASE_URL}/ai-sanbo`,
     lastModified: new Date(),
     changeFrequency: 'monthly',
     priority: 0.9,

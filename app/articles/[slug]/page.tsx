@@ -4,7 +4,7 @@ import { notFound } from "next/navigation";
 import ReadingProgress from "@/components/ReadingProgress";
 
 // A→B→C 学習導線（TASK-167 Act 2 ②b 決定事項6 / TASK-187）
-// 入口: 49→50 / A層: 42,25,26 / B層: 01,15,32 / C層: 13,34 → /ai-sansho
+// 入口: 49→50 / A層: 42,25,26 / B層: 01,15,32 / C層: 13,34 → /ai-sanbo
 const LEARNING_PATH: Record<string, { slug: string; label: string } | { href: string; label: string }> = {
   "article-49": { slug: "article-50", label: "次の記事へ" },
   "article-50": { slug: "article-42", label: "次の記事へ" },
@@ -15,7 +15,7 @@ const LEARNING_PATH: Record<string, { slug: string; label: string } | { href: st
   "article-15": { slug: "article-32", label: "次の記事へ" },
   "article-32": { slug: "article-13", label: "次の記事へ" },
   "article-13": { slug: "article-34", label: "次の記事へ" },
-  "article-34": { href: "/ai-sansho", label: "AI経営参謀サービスを見る →" },
+  "article-34": { href: "/ai-sanbo", label: "AI経営参謀サービスを見る →" },
 };
 
 interface Props {

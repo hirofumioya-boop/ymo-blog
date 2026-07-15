@@ -469,7 +469,7 @@ export default function AiMindsetPage() {
             このページのTipsは、横濱マネジメントオフィスが提供するAI経営参謀サービスでもベースとなる考え方です。
           </p>
           <Link
-            href="/ai-sansho"
+            href="/ai-sanbo"
             aria-label="AI経営参謀の詳細ページへ"
             style={{
               fontFamily: '"Noto Sans JP", "ヒラギノ角ゴ Pro", sans-serif',
