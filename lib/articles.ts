@@ -30,6 +30,15 @@ function calculateReadingTime(content: string): number {
   return Math.max(1, minutes);
 }
 
+// 見出し末尾の `{#id}` 記法（remarkの標準機能ではない）を実アンカーに変換する。
+// これがないと `{#id}` がそのまま文字として表示され、ページ内ジャンプリンクも機能しない。
+function resolveHeadingAnchors(content: string): string {
+  return content.replace(
+    /^(#{1,6})\s+(.*?)\s*\{#([a-zA-Z0-9_-]+)\}\s*$/gm,
+    (_match, hashes: string, text: string, id: string) => `${hashes} <a id="${id}"></a>${text}`
+  );
+}
+
 function stripHtmlTags(text: string): string {
   return text.replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim();
 }
@@ -127,7 +136,7 @@ export async function getArticleBySlug(slug: string): Promise<Article | null> {
       const processedContent = await remark()
         .use(remarkGfm)
         .use(html, { sanitize: false })
-        .process(content);
+        .process(resolveHeadingAnchors(content));
       const contentHtml = processedContent.toString();
 
       return {
