@@ -5,6 +5,9 @@ export const metadata = {
   title: "Git / GitHub入門",
   description:
     "AI初心者向けに、そもそもGitとは何か、GitHubとの違い、何が便利なのか、基本コマンド、Codex・Claude Codeとの関係をやさしく整理した入門ページです。",
+  alternates: {
+    canonical: "https://blog.y-m-o.jp/git-guide",
+  },
   openGraph: {
     url: "https://blog.y-m-o.jp/git-guide",
   },

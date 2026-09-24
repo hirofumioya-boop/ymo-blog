@@ -37,6 +37,9 @@ export async function generateMetadata({ params }: Props) {
   return {
     title: article.title,
     description: article.excerpt,
+    alternates: {
+      canonical: articleUrl,
+    },
     ...(article.archived && {
       robots: { index: false, follow: true },
     }),

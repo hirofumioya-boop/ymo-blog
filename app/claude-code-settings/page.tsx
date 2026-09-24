@@ -5,6 +5,9 @@ export const metadata = {
   title: "Claude Code 設定ガイド",
   description:
     "AI初心者向けに、Claude Code（デスクトップアプリ）の設定画面の各項目を、一つずつやさしく解説したページです。権限モード・Claude Code・連携・カスタマイズなど、どこで安全を守り、どこは後回しでよいかを地図のように説明します。",
+  alternates: {
+    canonical: "https://blog.y-m-o.jp/claude-code-settings",
+  },
   openGraph: {
     url: "https://blog.y-m-o.jp/claude-code-settings",
   },

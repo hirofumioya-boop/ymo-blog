@@ -3,6 +3,9 @@ import Link from "next/link";
 export const metadata = {
   title: "About",
   description: "AIは技術の話じゃなかった。経営者なら誰でも知っている、組織論の話だった。非エンジニア社長が実践した全記録。",
+  alternates: {
+    canonical: 'https://blog.y-m-o.jp/about',
+  },
   openGraph: {
     url: 'https://blog.y-m-o.jp/about',
   },

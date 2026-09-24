@@ -5,6 +5,9 @@ export const metadata = {
   title: "Codex 設定ガイド",
   description:
     "AI初心者向けに、Codexアプリの設定画面（一般・構成・外観・パーソナライズ・MCPサーバー・コンピューターの使用・フックなど）の各項目を、一つずつやさしく解説したページです。",
+  alternates: {
+    canonical: "https://blog.y-m-o.jp/codex-settings",
+  },
   openGraph: {
     url: "https://blog.y-m-o.jp/codex-settings",
   },

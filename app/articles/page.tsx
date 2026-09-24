@@ -5,6 +5,9 @@ import LearningPathGateway from "@/components/LearningPathGateway";
 export const metadata = {
   title: "全記事一覧",
   description: "非エンジニア社長がAI社員だけの会社を作ってみた実録シリーズ——全記事一覧。",
+  alternates: {
+    canonical: 'https://blog.y-m-o.jp/articles',
+  },
   openGraph: {
     url: 'https://blog.y-m-o.jp/articles',
   },

@@ -5,6 +5,9 @@ export const metadata = {
   title: "Claude Code入門",
   description:
     "AI初心者向けに、Claude Codeのインストール、作業フォルダ、CLAUDE.md、権限設定、主なコマンドをやさしく整理した入門ページです。",
+  alternates: {
+    canonical: "https://blog.y-m-o.jp/claude-code-guide",
+  },
   openGraph: {
     url: "https://blog.y-m-o.jp/claude-code-guide",
   },

@@ -9,8 +9,12 @@ const siteTitle = "AIが気になる。でもとっかかりがわからない�
 const siteDescription = "AIは技術の話じゃなかった。経営者なら誰でも知っている、組織論の話だった。非エンジニア社長が実践した全記録。";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://blog.y-m-o.jp"),
   title: siteTitle,
   description: siteDescription,
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
     type: 'website',
     locale: 'ja_JP',

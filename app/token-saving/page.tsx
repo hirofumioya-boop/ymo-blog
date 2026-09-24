@@ -5,6 +5,9 @@ export const metadata = {
   title: "トークン節約のコツ",
   description:
     "AI初心者向けに、Claude Code・Codex共通で効く「トークン節約」のコツを、仕組み（なぜ効くのか）から初級・中級・上級、RTKによるコマンド出力圧縮まで、やさしく解説したページです。",
+  alternates: {
+    canonical: "https://blog.y-m-o.jp/token-saving",
+  },
   openGraph: {
     url: "https://blog.y-m-o.jp/token-saving",
   },

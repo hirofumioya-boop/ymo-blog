@@ -5,6 +5,9 @@ export const metadata = {
   title: "Codex入門",
   description:
     "AI初心者向けに、Codexのインストール、作業フォルダ、セキュリティ設定、アプリ設定、主なコマンドをやさしく整理した入門ページです。",
+  alternates: {
+    canonical: "https://blog.y-m-o.jp/codex-guide",
+  },
   openGraph: {
     url: "https://blog.y-m-o.jp/codex-guide",
   },
