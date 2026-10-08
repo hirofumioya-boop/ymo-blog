@@ -1,6 +1,6 @@
 import fs from "fs";
 import path from "path";
-import matter from "gray-matter";
+import { parseFrontmatter } from "@/lib/frontmatter";
 import Link from "next/link";
 
 export const metadata = {
@@ -874,7 +874,7 @@ function getArticleUsageByTerm(termsToScan: Term[]) {
   for (const fileName of fileNames) {
     const filePath = path.join(articlesDirectory, fileName);
     const fileContents = fs.readFileSync(filePath, "utf8");
-    const { data, content } = matter(fileContents);
+    const { data, content } = parseFrontmatter<Record<string, unknown>>(fileContents);
     const searchableContent = stripBoilerplate(content);
 
     if (data.archived) continue;

@@ -1,6 +1,6 @@
 import fs from 'fs';
 import path from 'path';
-import matter from 'gray-matter';
+import { parseFrontmatter } from './frontmatter';
 import { remark } from 'remark';
 import html from 'remark-html';
 import remarkGfm from 'remark-gfm';
@@ -105,7 +105,7 @@ export function getAllArticles(options?: { includeArchived?: boolean }): Article
     .map(fileName => {
       const filePath = path.join(articlesDirectory, fileName);
       const fileContents = fs.readFileSync(filePath, 'utf8');
-      const { data, content } = matter(fileContents);
+      const { data, content } = parseFrontmatter<Record<string, unknown>>(fileContents);
 
       return {
         number: data.number as number,
@@ -130,7 +130,7 @@ export async function getArticleBySlug(slug: string): Promise<Article | null> {
   for (const fileName of fileNames) {
     const filePath = path.join(articlesDirectory, fileName);
     const fileContents = fs.readFileSync(filePath, 'utf8');
-    const { data, content } = matter(fileContents);
+    const { data, content } = parseFrontmatter<Record<string, unknown>>(fileContents);
 
     if (data.slug === slug) {
       const processedContent = await remark()
@@ -164,7 +164,7 @@ export function getAllSlugs(): string[] {
     .map(fileName => {
       const filePath = path.join(articlesDirectory, fileName);
       const fileContents = fs.readFileSync(filePath, 'utf8');
-      const { data } = matter(fileContents);
+      const { data } = parseFrontmatter<Record<string, unknown>>(fileContents);
       return data.slug as string;
     });
 }
